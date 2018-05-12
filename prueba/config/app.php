@@ -159,7 +159,7 @@ return [
         // App\Providers\BroadcastServiceProvider::class,
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
-
+        Reliese\Coders\CodersServiceProvider::class,
     ],
 
     /*
@@ -172,7 +172,9 @@ return [
     | the aliases are "lazy" loaded so they don't hinder performance.
     |
     */
-
+        
+    
+    
     'aliases' => [
 
         'App' => Illuminate\Support\Facades\App::class,

@@ -185,25 +185,23 @@
                
                  @forelse($nuevosProductos as $npr)
                      
-                      @if($loop->index > 6)
-                       @break
-                      @endif
+                  
                  
                   <div class="col-md-6 col-lg-4 g-px-10">
                   <!-- Article -->
                   <article class="media g-brd-around g-brd-gray-light-v4 g-bg-white rounded g-pa-10 g-mb-20">
                     <!-- Article Image -->
                     <div class="g-max-width-100 g-mr-15">
-                      <img class="d-flex w-100" src="{{$npr['imagen']}}" alt="Image Description" style="height:150px; width: 150px">
+                      <img class="d-flex w-100" src="{{$npr->rec_url}}" alt="Image Description" style="height:150px; width: 150px">
                     </div>
                     <!-- End Article Image -->
 
                     <!-- Article Info -->
                     <div class="media-body align-self-center">
                       <h4 class="h5 g-mb-7">
-                        <a class="g-color-black g-color-primary--hover g-text-underline--none--hover" href="#!">Glasses</a>
+                        <a class="g-color-black g-color-primary--hover g-text-underline--none--hover" href="#!">{{$npr->prov_nombre}}</a>
                       </h4>
-                      <a class="d-inline-block g-color-gray-dark-v5 g-font-size-13 g-mb-10" href="#!">Accessories</a>
+                      <a class="d-inline-block g-color-gray-dark-v5 g-font-size-13 g-mb-10" href="#!">{{$npr->tpr_nombre}}</a>
                       <!-- End Article Info -->
 
                       <!-- Article Footer -->
@@ -228,6 +226,8 @@
                   <!-- End Article -->
                 </div>
                  @empty
+                    No existen productos nuevos
+                 
                  @endforelse
 
   

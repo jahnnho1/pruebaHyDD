@@ -11,6 +11,6 @@
 |
 */
 
-Route::get('/', 'PagesController@home');
+Route::get('/', 'homeController@home');
 
 

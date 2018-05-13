@@ -12,7 +12,24 @@
 */
 
 Route::get('/', 'homeController@home');
-
 Route::get('/producto/{id}', 'productoController@vistaProducto');
+Route::get('/ingresoCliente', 'ingresoClienteController@homeIngreso');
 
 
+
+
+
+
+
+
+
+
+/*
+ * 
+ * Area Administrativa
+ * 
+ * /
+ */
+
+Route::get('/areaAdministrativa', 'administracionController@homeAdministracion');
+Route::get('/productoAdministrativa', 'administracionController@homeProducto');

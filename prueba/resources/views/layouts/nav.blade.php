@@ -22,12 +22,12 @@
             <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg" id="navBar">
               <ul class="navbar-nav ml-auto text-uppercase g-font-weight-600 u-main-nav-v2 u-sub-menu-v2">
                 <li class="nav-item g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
-                  <a href="#!" class="nav-link">Home
+                  <a href="{{url('/')}}" class="nav-link">Inicio
                 
               </a>
                 </li>
                 <li class="nav-item hs-has-sub-menu g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
-                  <a href="#!" class="nav-link" id="nav-link-1" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1">Pages
+                  <a href="#!" class="nav-link" id="nav-link-1" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1">Categorias
                 
               </a>
                   <!-- Submenu -->
@@ -53,18 +53,14 @@
                 
               </a>
                 </li>
-                <li class="nav-item g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg active">
+                <li class="nav-item g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg ">
                   <a href="#!" class="nav-link">Shortcodes
                 <span class="sr-only">(current)</span>
               </a>
                 </li>
+           
                 <li class="nav-item g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
-                  <a href="#!" class="nav-link">Demos
-                
-              </a>
-                </li>
-                <li class="nav-item g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
-                  <a href="#!" class="nav-link">What's New
+                  <a href="{{url('/ingresoCliente')}}" class="nav-link g-bg-primary"> Crear cuenta/Ingresar
                 
               </a>
                 </li>
@@ -77,13 +73,14 @@
             <div class="u-basket d-inline-block g-valign-middle g-pt-6 g-ml-30 g-ml-0--lg hidden-xs">
               <a href="#!" id="basket-bar-invoker" class="u-icon-v1 g-color-main g-text-underline--none--hover g-width-20 g-height-20" aria-controls="basket-bar" aria-haspopup="true" aria-expanded="false" data-dropdown-event="hover" data-dropdown-target="#basket-bar"
               data-dropdown-type="css-animation" data-dropdown-duration="500" data-dropdown-hide-on-scroll="false" data-dropdown-animation-in="fadeIn" data-dropdown-animation-out="fadeOut">
-                <span class="u-badge-v1--sm g-color-white g-bg-primary g-rounded-50x">3</span>
+                <span class="u-badge-v1--sm g-color-white g-bg-primary g-rounded-50x">0</span>
                 <i class="fa fa-shopping-cart"></i>
               </a>
 
               <div id="basket-bar" class="u-basket__bar u-dropdown--css-animation u-dropdown--hidden g-brd-top g-brd-2 g-brd-primary g-color-main g-mt-25--lg g-mt-15--lg--scrolling" aria-labelledby="basket-bar-invoker">
                 <div class="js-scrollbar g-height-280">
-                  <!-- Product -->
+                  
+                    <!-- Product -->
                   <div class="u-basket__product">
                     <div class="row align-items-center no-gutters">
                       <div class="col-4 g-pr-20">

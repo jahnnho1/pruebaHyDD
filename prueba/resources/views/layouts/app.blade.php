@@ -1,9 +1,10 @@
 <!doctype html>
 <html lang="{{ app()->getLocale() }}">
     <head>
-        <meta charset="utf-8"> 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Required Meta Tags Always Come First -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
 
         <title>@yield('tittle','Hyd Limitada')</title>
 
@@ -29,6 +30,7 @@
   
   <link rel="stylesheet" href="{{ asset('assets/vendor/dzsparallaxer/dzsscroller/scroller.css')}}">
   <link rel="stylesheet" href="{{ asset('assets/vendor/dzsparallaxer/advancedscroller/plugin.css')}}">
+
   
   <link rel="stylesheet" href="{{ asset('assets/vendor/slick-carousel/slick/slick.css')}}">
 
@@ -46,6 +48,10 @@
   <link rel="stylesheet" href="{{ asset('assets/vendor/hs-megamenu/src/hs.megamenu.css')}}">
   <!-- CSS Customization -->
   <link rel="stylesheet" href="{{ asset('assets/css/custom.css')}}">
+  
+  
+  
+
       
     </head>
     
@@ -76,10 +82,15 @@
   <script src="{{ asset('assets/vendor/dzsparallaxer/dzsparallaxer.js')}}"></script>
   <script src="{{ asset('assets/vendor/dzsparallaxer/dzsscroller/scroller.js')}}"></script>
   <script src="{{ asset('assets/vendor/dzsparallaxer/advancedscroller/plugin.js')}}"></script>
+
   <script src="{{ asset('assets/vendor/masonry/dist/masonry.pkgd.min.js')}}"></script>
   <script src="{{ asset('assets/vendor/imagesloaded/imagesloaded.pkgd.min.js')}}"></script>
   <script src="{{ asset('assets/vendor/slick-carousel/slick/slick.js')}}"></script>
   <script src="{{ asset('assets/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js')}}"></script>
+  
+  
+
+  
   <!-- JS Unify -->
   
 
@@ -92,17 +103,20 @@
   <script src="{{ asset('assets/js/components/hs.dropdown.js')}}"></script>
   
   <script src="{{ asset('assets/js/components/hs.carousel.js')}}"></script>
+  
   <script src="{{ asset('assets/js/components/hs.go-to.js')}}"></script>
-  <script src="{{ asset('assets/js/helpers/hs.height-calc.js')}}"></script>
-        
-        
+  <script src="{{ asset('assets/js/helpers/hs.height-calc.js')}}"></script>  
   <script  src="{{ asset('assets/js/components/hs.tabs.js')}}"></script>
   <script  src="{{ asset('assets/js/components/hs.rating.js')}}"></script>
   <script  src="{{ asset('assets/js/components/hs.count-qty.js')}}"></script>
   
-    
-  
-  
+   <!-- JS Implementing intro del login -->
+   
+   
+
+
+
+
   
   
   
@@ -119,7 +133,6 @@
     $(document).ready(function () {
       // initialization of carousel
       $.HSCore.components.HSCarousel.init('.js-carousel');
-
       // initialization of masonry
       $('.masonry-grid').imagesLoaded().then(function () {
         $('.masonry-grid').masonry({
@@ -128,25 +141,20 @@
           percentPosition: true
         });
       });
-
       // initialization of header's height equal offset
       $.HSCore.helpers.HSHeightCalc.init();
-
       // initialization of go to
-      $.HSCore.components.HSGoTo.init('.js-go-to');
-      
-      
-      
+      $.HSCore.components.HSGoTo.init('.js-go-to'); 
       // initialization of rating
       $.HSCore.components.HSRating.init($('.js-rating'), {
         spacing: 4
       });
-
       // initialization of qty
-      $.HSCore.components.HSCountQty.init('.js-quantity');
-      
-      
+      $.HSCore.components.HSCountQty.init('.js-quantity');      
+
     });
+
+
 
     $(window).on('load', function () {
       // initialization of header
@@ -175,8 +183,10 @@
         });
       });
 
+
+
       // initialization of popups
-      $.HSCore.components.HSPopup.init('.js-fancybox');
+    //  $.HSCore.components.HSPopup.init('.js-fancybox');
       
       
       
@@ -203,6 +213,12 @@
     
   </script>
         
+  
+
+      
+     
+      
+
         
         
     </body>

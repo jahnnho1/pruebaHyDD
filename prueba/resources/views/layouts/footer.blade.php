@@ -1,5 +1,7 @@
-   <!-- Call To Action -->
-    <section class="g-bg-white-opacity-0_1 g-color-white g-pa-30" style="background-image: url(assets3/img/bg/pattern5.png);">
+
+<div class="g-bg-bluegray-lineargradient">
+<!-- Call To Action -->
+    <section class="g-bg-white-opacity-0_1 g-color-white g-pa-30" style="background-image: url( {{ asset('assets3/img/bg/pattern5.png')}} );">
       <div class="d-md-flex justify-content-md-center text-center">
         <div class="align-self-md-center">
           <p class="lead g-font-weight-400 g-mr-20--md g-mb-15 g-mb-0--md">We offer best in class service for your needs</p>
@@ -10,7 +12,7 @@
       </div>
     </section>
     <!-- End Call To Action -->
-
+</div>
     <!-- Footer -->
     <div id="contacts-section" class="g-bg-black-opacity-0_9 g-color-white-opacity-0_8 g-py-60">
       <div class="container">
@@ -107,7 +109,7 @@
               <h2 class="u-heading-v2__title h6 text-uppercase mb-0">Our Contacts</h2>
             </div>
 
-            <address class="g-bg-no-repeat g-font-size-12 mb-0" style="background-image: url(assets3/img/maps/map2.png);">
+            <address class="g-bg-no-repeat g-font-size-12 mb-0" style="background-image: url( {{ asset('assets3/img/maps/map2.png')}} );">
           <!-- Location -->
           <div class="d-flex g-mb-20">
             <div class="g-mr-10">

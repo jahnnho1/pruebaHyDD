@@ -13,8 +13,8 @@
             <!-- End Responsive Toggle Button -->
 
             <!-- Logo -->
-            <a href="index.html" class="navbar-brand">
-              <img src="assets/img/logo/logo-1.png" alt="Image Description">
+            <a href="{{url('/')}}" class="navbar-brand">
+              <img src="{{ asset('assets/img/logo/logo-1.png')}}" alt="Image Description">
             </a>
             <!-- End Logo -->
 
@@ -88,7 +88,7 @@
                     <div class="row align-items-center no-gutters">
                       <div class="col-4 g-pr-20">
                         <a href="#!" class="u-basket__product-img">
-                          <img src="assets/img-temp/150x150/img1.jpg" alt="Image Description">
+                          <img src="{{ asset('assets/img-temp/150x150/img1.jpg')}}" alt="Image Description">
                         </a>
                       </div>
 
@@ -103,65 +103,10 @@
                   </div>
                   <!-- End Product -->
 
-                  <!-- Product -->
-                  <div class="u-basket__product">
-                    <div class="row align-items-center no-gutters">
-                      <div class="col-4 g-pr-20">
-                        <a href="#!" class="u-basket__product-img">
-                          <img src="assets/img-temp/150x150/img2.jpg" alt="Image Description">
-                        </a>
-                      </div>
 
-                      <div class="col-8">
-                        <h6 class="g-font-weight-600 g-mb-0">
-                      <a href="#!" class="g-color-main g-color-main--hover g-text-underline--none--hover">Black Glasses</a>
-                    </h6>
-                        <small class="g-color-gray-dark-v5 g-font-size-14">1 x $400.00</small>
-                      </div>
-                    </div>
-                    <button class="u-basket__product-remove" type="button">&times;</button>
-                  </div>
-                  <!-- End Product -->
 
-                  <!-- Product -->
-                  <div class="u-basket__product">
-                    <div class="row align-items-center no-gutters">
-                      <div class="col-4 g-pr-20">
-                        <a href="#!" class="u-basket__product-img">
-                          <img src="assets/img-temp/150x150/img3.jpg" alt="Image Description">
-                        </a>
-                      </div>
 
-                      <div class="col-8">
-                        <h6 class="g-font-weight-600 g-mb-0">
-                      <a href="#!" class="g-color-main g-color-main--hover g-text-underline--none--hover">Black Glasses</a>
-                    </h6>
-                        <small class="g-color-gray-dark-v5 g-font-size-14">1 x $400.00</small>
-                      </div>
-                    </div>
-                    <button class="u-basket__product-remove" type="button">&times;</button>
-                  </div>
-                  <!-- End Product -->
-
-                  <!-- Product -->
-                  <div class="u-basket__product">
-                    <div class="row align-items-center no-gutters">
-                      <div class="col-4 g-pr-20">
-                        <a href="#!" class="u-basket__product-img">
-                          <img src="assets/img-temp/150x150/img1.jpg" alt="Image Description">
-                        </a>
-                      </div>
-
-                      <div class="col-8">
-                        <h6 class="g-font-weight-600 g-mb-0">
-                      <a href="#!" class="g-color-main g-color-main--hover g-text-underline--none--hover">Black Glasses</a>
-                    </h6>
-                        <small class="g-color-gray-dark-v5 g-font-size-14">1 x $400.00</small>
-                      </div>
-                    </div>
-                    <button class="u-basket__product-remove" type="button">&times;</button>
-                  </div>
-                  <!-- End Product -->
+    
                 </div>
 
                 <div class="g-brd-top g-brd-gray-light-v4 g-pa-15 g-pb-20">

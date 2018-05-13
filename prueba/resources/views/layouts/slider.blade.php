@@ -4,7 +4,9 @@
     <!-- Hero Info #12 -->
 <section class="dzsparallaxer auto-init height-is-based-on-content use-loading" data-options="{direction: 'reverse', settings_mode_oneelement_max_offset: '150'}">
   <!-- Parallax Image -->
-  <div class="divimage dzsparallaxer--target w-100 u-bg-overlay g-bg-black-opacity-0_5--after" style="height: 140%; background-image: url(imgVarias/carwal.jpg)"></div>
+  <div class="divimage dzsparallaxer--target w-100 u-bg-overlay g-bg-black-opacity-0_5--after" style="height: 140%; background-image: url( {{ asset('imgVarias/carwal.jpg')}} );">
+      
+  </div>
   <!-- End Parallax Image -->
 
   <div class="container g-color-white g-py-150--md g-py-80">

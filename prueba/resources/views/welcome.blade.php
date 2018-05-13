@@ -199,7 +199,8 @@
                     <!-- Article Info -->
                     <div class="media-body align-self-center">
                       <h4 class="h5 g-mb-7">
-                        <a class="g-color-black g-color-primary--hover g-text-underline--none--hover" href="#!">{{$npr->prov_nombre}}</a>
+                          
+                        <a class="g-color-black g-color-primary--hover g-text-underline--none--hover" href="{{url('/producto')}}/{{$npr->pro_id }}">{{$npr->pro_nombre}}</a>
                       </h4>
                       <a class="d-inline-block g-color-gray-dark-v5 g-font-size-13 g-mb-10" href="#!">{{$npr->tpr_nombre}}</a>
                       <!-- End Article Info -->

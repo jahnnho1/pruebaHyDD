@@ -13,4 +13,6 @@
 
 Route::get('/', 'homeController@home');
 
+Route::get('/producto/{id}', 'productoController@vistaProducto');
+
 

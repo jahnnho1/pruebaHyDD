@@ -11,7 +11,7 @@ class homeController extends Controller
 {
     //
     
-        public function home()
+    public function home()
     {
          //para realizar una quert
          $nuevosProductos = DB::table('producto')

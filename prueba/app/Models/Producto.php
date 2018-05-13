@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sat, 12 May 2018 17:00:29 +0000.
+ * Date: Sat, 12 May 2018 23:40:01 +0000.
  */
 
 namespace App\Models;
@@ -17,12 +17,13 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property int $prov_id
  * @property int $sca_id
  * @property string $pro_codigo_serial
- * @property string $prov_nombre
- * @property string $prov_descripcion
+ * @property string $pro_nombre
+ * @property string $pro_descripcion
  * @property int $pro_stock_min
  * @property int $pro_stock_max
  * @property int $pro_stock_actual
- * @property bool $pro_estado
+ * @property int $pro_estado
+ * @property bool $pro_eliminado
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  * 
@@ -46,7 +47,8 @@ class Producto extends Eloquent
 		'pro_stock_min' => 'int',
 		'pro_stock_max' => 'int',
 		'pro_stock_actual' => 'int',
-		'pro_estado' => 'bool'
+		'pro_estado' => 'int',
+		'pro_eliminado' => 'bool'
 	];
 
 	protected $fillable = [
@@ -54,12 +56,13 @@ class Producto extends Eloquent
 		'prov_id',
 		'sca_id',
 		'pro_codigo_serial',
-		'prov_nombre',
-		'prov_descripcion',
+		'pro_nombre',
+		'pro_descripcion',
 		'pro_stock_min',
 		'pro_stock_max',
 		'pro_stock_actual',
-		'pro_estado'
+		'pro_estado',
+		'pro_eliminado'
 	];
 
 	public function tipo_producto()

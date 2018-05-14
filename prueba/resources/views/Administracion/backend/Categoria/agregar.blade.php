@@ -1,22 +1,12 @@
-{% extends 'backend/base/index.html.twig' %}
 
-
-{% block stylesheets %}
-
-    <link type="text/css" href="{{ asset('backend/plugins/comentario/editor.css')}}" rel="stylesheet"/>
-    <link href="{{ asset('backend/plugins/jquery-file-upload/blueimp-gallery/blueimp-gallery.min.css" rel="stylesheet')}}" />
-    <link href="{{ asset('backend/plugins/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet')}}" />
-    <link href="{{ asset('backend/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet')}}" />    
-{% endblock %}
+@extends('Administracion.backend.base.index')
 
 
 
+ @section('contentAdm')
 
 
-{% block contenido %}
-
-
-    {% include 'backend/includes/alert.messages.html.twig'  %}
+ 
 
     <!-- begin breadcrumb -->
     <ol class="breadcrumb pull-right">
@@ -25,14 +15,16 @@
     </ol>
     <!-- end breadcrumb -->
     <!-- begin page-header -->
-    <h1 class="page-header">Crear Publicacion <small> </small></h1>
+    <h1 class="page-header">Agregar producto <small> </small></h1>
 
 
 
 
-   <form id="fileupload" action="{{ path('backend_crearPublicacion_especialidades_ejecutar') }}" method="POST" enctype="multipart/form-data">
+   <form id="fileupload" action="{{url('/Administracion/EjecutarAgregarProductoAdm')}} " method="POST" enctype="multipart/form-data">
+        {{ csrf_field() }}
 
 
+        
         <div class="col-md-12 ui-sortable">
             <div class="panel panel-inverse">
                 <div class="panel-heading">
@@ -42,21 +34,20 @@
                         <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                         <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                     </div>
-                    <h4 class="panel-title">Crear Publicacion en el blog</h4>
+                    <h4 class="panel-title">Agregar producto</h4>
                 </div>
                 <div class="panel-body">
-
-                    
-                    
+        
+                @include('layouts.alertas')
+        
+     
                     
                     <h4 class="m-t-0">Titulo</h4>
                     <input class="form-control" type="text" placeholder="Titulo" name="especialidadTitulo">
                     
                      <h4 class="m-t-0">Tipo de especialidad</h4>
-                    <select class="form-control input-sm" name="especialidadFormato">
-                          {% for tp in formatoPublicacion %} 
-                                <option value="{{tp.forId }}">{{ tp.forNombre}}</option>
-                          {% endfor %}
+                    <select class="form-control input-sm" name="especialidadFormato" >
+                    
                     </select>
                     
                     <h4 class="m-t-0">Breve descripcion</h4>
@@ -103,26 +94,6 @@
     </form>
 
 
-{% endblock %}
-
-
-{% block javascripts %}
-
-    
-    <script src="{{ asset('backend/plugins/jquery-file-upload/js/vendor/jquery.ui.widget.js')}}"></script>
-    <script src="{{ asset('backend/plugins/jquery-file-upload/js/vendor/tmpl.min.js')}}"></script>
-    <script src="{{ asset('backend/plugins/jquery-file-upload/js/vendor/load-image.min.js')}}"></script>
-    <script src="{{ asset('backend/plugins/jquery-file-upload/js/vendor/canvas-to-blob.min.js')}}"></script>
-    <script src="{{ asset('backend/plugins/jquery-file-upload/blueimp-gallery/jquery.blueimp-gallery.min.js')}}"></script>
-    <script src="{{ asset('backend/plugins/jquery-file-upload/js/jquery.iframe-transport.js')}}"></script>
-    <script src="{{ asset('backend/plugins/jquery-file-upload/js/jquery.fileupload.js')}}"></script>
-    <script src="{{ asset('backend/plugins/jquery-file-upload/js/jquery.fileupload-process.js')}}"></script>
-    <script src="{{ asset('backend/plugins/jquery-file-upload/js/jquery.fileupload-image.js')}}"></script>
-    <script src="{{ asset('backend/plugins/jquery-file-upload/js/jquery.fileupload-audio.js')}}"></script>
-    <script src="{{ asset('backend/plugins/jquery-file-upload/js/jquery.fileupload-video.js')}}"></script>
-    <script src="{{ asset('backend/plugins/jquery-file-upload/js/jquery.fileupload-validate.js')}}"></script>
-    <script src="{{ asset('backend/plugins/jquery-file-upload/js/jquery.fileupload-ui.js')}}"></script>    
-    <script src="{{ asset('backend/js/form-multiple-upload.demo.min.js')}}"></script>
+ @endsection
     
 
-{% endblock %}

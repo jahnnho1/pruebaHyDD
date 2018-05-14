@@ -12,7 +12,7 @@
     </ol>
     <!-- end breadcrumb -->
     <!-- begin page-header -->
-    <h1 class="page-header">Panel administrativo de Productos <small> </small></h1>
+    <h1 class="page-header">Panel administrativo de Categorías <small> </small></h1>
                     <div class="row">
 				<!-- begin col-3 -->
 				<div class="col-md-12 col-sm-12">
@@ -29,7 +29,7 @@
 				</div>
 				<!-- end col-3 -->
 						
-		</div>
+                    </div>
 
         <div class="row">
 
@@ -56,23 +56,23 @@
                             <table id="data-table" class="table table-striped table-bordered table-hover">
                                 <thead>
                                     <tr>
-                                        <th>ID</th>
-                                        <th>Còdigo</th>                                  
+                                        <th>ID</th>                                                                        
                                         <th>Nombre</th>
+                                        <th>Descripcion</th>
                                         <th>Estado</th>
                                         <th>Fecha Creaciòn</th>                                     
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @forelse($Productos as $pro)
+                                    @forelse($Categorias as $Categoria)
                                         <tr class="odd gradeX">
-                                            <td>{{$pro->pro_id }}</td>
-                                            <td>{{$pro->pro_codigo_serial }}</td>
-                                            <td>{{$pro->pro_nombre }}</td>                                   
+                                            <td>{{$Categoria->tpr_id }}</td>
+                                            <td>{{$Categoria->tpr_nombre }}</td>
+                                            <td>{{$Categoria->tpr_descripcion }}</td>                                 
                                            
                                             
-                                            @if($pro->pro_estado == 1) 
+                                            @if($Categoria->tpr_estado == 0) 
                                              <td>  <span class="label label-success">Activo</span></td>
                                             @else                                     
                                               <td>  <span class="label label-danger">Inactivo</span></td>
@@ -81,7 +81,7 @@
                                             
                                             
                                             
-                                            <td>{{$pro->created_at }}</td>                                                                                  
+                                            <td>{{$Categoria->created_at }}</td>                                                                                  
                                             <td>
                                                 <a class="btn btn-icon btn-sm" title="Modificar MP"  href="">                                    
                                                     <i class="fa fa-lg fa-edit"> </i>

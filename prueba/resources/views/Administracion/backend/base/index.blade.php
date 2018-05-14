@@ -26,7 +26,10 @@
        
         
         <!-- ================== END BASE CSS STYLE ================== -->
-        
+            <link type="text/css" href="{{ asset('backend/plugins/comentario/editor.css')}}" rel="stylesheet"/>
+             <link href="{{ asset('backend/plugins/jquery-file-upload/blueimp-gallery/blueimp-gallery.min.css" rel="stylesheet')}}" />
+             <link href="{{ asset('backend/plugins/jquery-file-upload/css/jquery.fileupload.css" rel="stylesheet')}}" />
+             <link href="{{ asset('backend/plugins/jquery-file-upload/css/jquery.fileupload-ui.css" rel="stylesheet')}}" />   
    
 
         <!-- ================== BEGIN BASE JS ================== -->
@@ -89,7 +92,22 @@
         <!-- ================== END PAGE LEVEL JS ================== -->
         
  
-
+        <script src="{{ asset('backend/plugins/jquery-file-upload/js/vendor/jquery.ui.widget.js')}}"></script>
+        <script src="{{ asset('backend/plugins/jquery-file-upload/js/vendor/tmpl.min.js')}}"></script>
+        <script src="{{ asset('backend/plugins/jquery-file-upload/js/vendor/load-image.min.js')}}"></script>
+        <script src="{{ asset('backend/plugins/jquery-file-upload/js/vendor/canvas-to-blob.min.js')}}"></script>
+        <script src="{{ asset('backend/plugins/jquery-file-upload/blueimp-gallery/jquery.blueimp-gallery.min.js')}}"></script>
+        <script src="{{ asset('backend/plugins/jquery-file-upload/js/jquery.iframe-transport.js')}}"></script>
+        <script src="{{ asset('backend/plugins/jquery-file-upload/js/jquery.fileupload.js')}}"></script>
+        <script src="{{ asset('backend/plugins/jquery-file-upload/js/jquery.fileupload-process.js')}}"></script>
+        <script src="{{ asset('backend/plugins/jquery-file-upload/js/jquery.fileupload-image.js')}}"></script>
+        <script src="{{ asset('backend/plugins/jquery-file-upload/js/jquery.fileupload-audio.js')}}"></script>
+        <script src="{{ asset('backend/plugins/jquery-file-upload/js/jquery.fileupload-video.js')}}"></script>
+        <script src="{{ asset('backend/plugins/jquery-file-upload/js/jquery.fileupload-validate.js')}}"></script>
+        <script src="{{ asset('backend/plugins/jquery-file-upload/js/jquery.fileupload-ui.js')}}"></script>    
+        <script src="{{ asset('backend/js/form-multiple-upload.demo.min.js')}}"></script>
+        
+        
             <script>
                 $(document).ready(function () {
                     App.init();

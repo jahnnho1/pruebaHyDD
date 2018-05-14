@@ -25,8 +25,8 @@
             <li class="nav-header">Navigation</li>
             <li class="has-sub ">
 
-                                <a href="#">
-                                      
+                                <a href="{{url('/Administracion/areaAdministrativa')}}">
+                               
                                       <b class=""></b>  
                     <i class="fa fa-institution alias"></i>
                     <span>Inicio</span>
@@ -43,8 +43,8 @@
                     <span>Panel de Administracion</span>
                 </a>
                 <ul class="sub-menu">
-                        <li class="" >     <a  href="{{url('/')}} " data-id=>  <i class=" fa fa-bank "> Categorias </i></a></li> 
-                        <li class="" >     <a  href="{{url('/productoAdministrativa')}} " data-id=>  <i class=" fa fa-bank "> Productos </i></a></li>  
+                        <li class="" >     <a  href="{{url('/Administracion/categoriaAdministrativa')}} " data-id=>  <i class=" fa fa-bank "> Categorias </i></a></li> 
+                        <li class="" >     <a  href="{{url('/Administracion/productoAdministrativa')}} " data-id=>  <i class=" fa fa-bank "> Productos </i></a></li>  
                         <li class="" >     <a  href="{{url('/')}} " data-id=>  <i class=" fa fa-bank "> Usuarios </i></a></li>  
                             
                 </ul>

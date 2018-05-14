@@ -31,5 +31,19 @@ Route::get('/ingresoCliente', 'ingresoClienteController@homeIngreso');
  * /
  */
 
-Route::get('/areaAdministrativa', 'administracionController@homeAdministracion');
-Route::get('/productoAdministrativa', 'administracionController@homeProducto');
+Route::get('/Administracion/areaAdministrativa', 'administracionController@homeAdministracion');
+Route::get('/Administracion/productoAdministrativa', 'administracionController@homeProducto');
+Route::get('/Administracion/categoriaAdministrativa', 'administracionController@homeCategoria');
+
+/*
+ * Admin Producto
+ */
+Route::get('/Administracion/agregarProductoAdm', 'productoAdministracionController@agregarProducto');
+Route::post('/Administracion/EjecutarAgregarProductoAdm', 'productoAdministracionController@EjecutarAgregarProducto');
+
+
+/*
+ * Admin Categoria
+ */
+Route::get('/Administracion/agregarCategoriaAdm', 'categoriaAdministracionController@agregarCategoria');
+Route::post('/Administracion/EjecutarAgregarCategoriaAdm', 'categoriaAdministracionController@EjecutarAgregarCategoria');

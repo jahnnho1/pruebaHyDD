@@ -6,7 +6,7 @@
           <div class="row flex-column flex-md-row align-items-center justify-content-md-end text-uppercase g-font-weight-600 g-color-white g-font-size-13">
             <div class="col-auto mr-md-auto g-px-15">
               <i class="icon icon-weather-001 g-font-size-20 g-valign-middle g-mr-10"></i>
-              13 &#8451; Chicago
+              Chile
             </div>
 
             <div class="col-auto g-px-15">

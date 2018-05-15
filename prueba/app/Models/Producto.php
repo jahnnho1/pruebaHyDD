@@ -40,6 +40,11 @@ class Producto extends Eloquent
 	protected $table = 'producto';
 	protected $primaryKey = 'pro_id';
 
+        const estado_activo = 0;
+        const estado_inactivo = 1;
+        const eliminado_true = 1;
+        const eliminado_false = 0;       
+        
 	protected $casts = [
 		'tpr_id' => 'int',
 		'prov_id' => 'int',
@@ -89,4 +94,16 @@ class Producto extends Eloquent
 	{
 		return $this->hasMany(\App\Models\Recurso::class, 'pro_id');
 	}
+        
+        
+        public function getImagenAttribute($rec_url){
+            
+            if(!$rec_url || starts_with($rec_url, 'http')){
+                return $rec_url;
+            }
+            
+            return \Storage::disk('public')->url($rec_url);
+            
+        }
+        
 }

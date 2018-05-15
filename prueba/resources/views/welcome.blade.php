@@ -194,7 +194,7 @@
                   <article class="media g-brd-around g-brd-gray-light-v4 g-bg-white rounded g-pa-10 g-mb-20">
                     <!-- Article Image -->
                     <div class="g-max-width-100 g-mr-15">
-                      <img class="d-flex w-100" src="{{$npr->rec_url}}" alt="Image Description" style="height:150px; width: 150px">
+                        <img class="d-flex w-100" src="{{ $Recurso->getImagenAttribute($npr->rec_url) }}" alt="Image Description" style="height:150px; width: 150px">
                     </div>
                     <!-- End Article Image -->
 

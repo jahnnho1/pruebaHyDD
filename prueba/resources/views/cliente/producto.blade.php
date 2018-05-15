@@ -24,7 +24,7 @@
                @forelse($imagesProducto as $npr)
              
                   <div class="js-slide">
-                    <img class="w-100" src="{{$npr->rec_url}}" alt="Image Description">
+                    <img class="w-100" src="{{ $Recurso->getImagenAttribute($npr->rec_url) }}" alt="Image Description">
                   </div>
                 
                 @empty
@@ -44,7 +44,7 @@
                     
                    @forelse($imagesProducto as $npr)    
                   <div class="js-slide g-cursor-pointer g-transition-0_3 g-mx-3">
-                    <img class="w-100" src="{{$npr->rec_url}}" alt="Image Description">
+                    <img class="w-100" src="{{ $Recurso->getImagenAttribute($npr->rec_url) }}" alt="Image Description">
                   </div>
                      @empty
                    <div class="js-slide g-cursor-pointer g-transition-0_3 g-mx-3">

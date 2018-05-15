@@ -15,12 +15,12 @@
     </ol>
     <!-- end breadcrumb -->
     <!-- begin page-header -->
-    <h1 class="page-header">Agregar producto <small> </small></h1>
+    <h1 class="page-header">Agregar Categoria <small> </small></h1>
 
 
 
 
-   <form id="fileupload" action="{{url('/Administracion/EjecutarAgregarProductoAdm')}} " method="POST" enctype="multipart/form-data">
+   <form id="fileupload" action="{{url('/Administracion/EjecutarAgregarCategoriaAdm')}} " method="POST" enctype="multipart/form-data">
         {{ csrf_field() }}
 
 
@@ -34,7 +34,7 @@
                         <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                         <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                     </div>
-                    <h4 class="panel-title">Agregar producto</h4>
+                    <h4 class="panel-title">Agregar Categoria</h4>
                 </div>
                 <div class="panel-body">
         
@@ -42,20 +42,17 @@
         
      
                     
-                    <h4 class="m-t-0">Titulo</h4>
-                    <input class="form-control" type="text" placeholder="Titulo" name="especialidadTitulo">
+                    <h4 class="m-t-0">*Nombre</h4>
+                    <input class="form-control" type="text" placeholder="Titulo" name="categoriaNombre">
                     
-                     <h4 class="m-t-0">Tipo de especialidad</h4>
-                    <select class="form-control input-sm" name="especialidadFormato" >
-                    
-                    </select>
-                    
-                    <h4 class="m-t-0">Breve descripcion</h4>
-                    <textarea class="form-control" rows="2" id="comment" name="especialidadBreveDescripcion" maxlength="160" placeholder="Un maximo de 160 Caracteres"></textarea>
+                     <h4 class="m-t-0">*Descripción</h4>                   
+                    <input class="form-control" type="text" placeholder="Titulo" name="categoriaDescripcion">
+                    <h4 class="m-t-0">Caracteristica 1</h4>
+                    <textarea class="form-control" rows="2" id="comment" name="categoriaCaract1" maxlength="160" placeholder="Un maximo de 160 Caracteres"></textarea>
                     
                     
-                    <h4 class="m-t-0">Descripcion</h4>
-                    <textarea class="form-control" rows="5" id="comment" name="especialidadDescripcion"></textarea>
+                    <h4 class="m-t-0">Caracteristica 2</h4>
+                    <textarea class="form-control" rows="2" id="comment" name="categoriaCaract2" maxlength="160"  placeholder="Un maximo de 160 Caracteres"></textarea>
 
 
                     
@@ -66,7 +63,7 @@
                                 <span class="btn btn-success fileinput-button">
                                     <i class="fa fa-plus"></i>
                                     <span>Agregar Imagen...</span>
-                                    <input type="file" name="imagenBreveDescripcion" multiple>
+                                    <input type="file" name="categoriaImagen" multiple>
                                 </span>
                             </div>
                     </div>

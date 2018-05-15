@@ -4,10 +4,10 @@
     <section class="g-bg-white-opacity-0_1 g-color-white g-pa-30" style="background-image: url( {{ asset('assets3/img/bg/pattern5.png')}} );">
       <div class="d-md-flex justify-content-md-center text-center">
         <div class="align-self-md-center">
-          <p class="lead g-font-weight-400 g-mr-20--md g-mb-15 g-mb-0--md">We offer best in class service for your needs</p>
+          <p class="lead g-font-weight-400 g-mr-20--md g-mb-15 g-mb-0--md"> Ofrecemos el mejor servicio para tus necesidades</p>
         </div>
         <div class="align-self-md-center">
-          <a class="btn btn-lg u-btn-white text-uppercase g-font-weight-600 g-font-size-12" target="_blank" href="https://wrapbootstrap.com/theme/unify-responsive-website-template-WB0412697?ref=htmlstream">Purchase Now</a>
+          <a class="btn btn-lg u-btn-white text-uppercase g-font-weight-600 g-font-size-12" target="_blank" href="https://wrapbootstrap.com/theme/unify-responsive-website-template-WB0412697?ref=htmlstream">Solicitar presupuesto </a>
         </div>
       </div>
     </section>
@@ -20,17 +20,17 @@
           <!-- Footer Content -->
           <div class="col-lg-3 col-md-6 g-mb-40 g-mb-0--lg">
             <div class="u-heading-v2-3--bottom g-brd-white-opacity-0_8 g-mb-20">
-              <h2 class="u-heading-v2__title h6 text-uppercase mb-0">About Us</h2>
+              <h2 class="u-heading-v2__title h6 text-uppercase mb-0">Sobre nosotros</h2>
             </div>
 
-            <p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
+            <p>H&D, somos una empresa especializada en la venta y distribución de repuestos para vehículos con los precios más convenientes del mercado automotriz.</p>
           </div>
           <!-- End Footer Content -->
 
           <!-- Footer Content -->
           <div class="col-lg-3 col-md-6 g-mb-40 g-mb-0--lg">
             <div class="u-heading-v2-3--bottom g-brd-white-opacity-0_8 g-mb-20">
-              <h2 class="u-heading-v2__title h6 text-uppercase mb-0">Latest Posts</h2>
+              <h2 class="u-heading-v2__title h6 text-uppercase mb-0">Ultimos Productos</h2>
             </div>
 
             <article>
@@ -63,38 +63,38 @@
           <!-- Footer Content -->
           <div class="col-lg-3 col-md-6 g-mb-40 g-mb-0--lg">
             <div class="u-heading-v2-3--bottom g-brd-white-opacity-0_8 g-mb-20">
-              <h2 class="u-heading-v2__title h6 text-uppercase mb-0">Useful Links</h2>
+              <h2 class="u-heading-v2__title h6 text-uppercase mb-0">Links Útiles</h2>
             </div>
 
             <nav class="text-uppercase1">
               <ul class="list-unstyled g-mt-minus-10 mb-0">
                 <li class="g-pos-rel g-brd-bottom g-brd-white-opacity-0_1 g-py-10">
                   <h4 class="h6 g-pr-20 mb-0">
-                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">About Us</a>
+                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="{{url('/')}}">Inicio</a>
                 <i class="fa fa-angle-right g-absolute-centered--y g-right-0"></i>
               </h4>
                 </li>
                 <li class="g-pos-rel g-brd-bottom g-brd-white-opacity-0_1 g-py-10">
                   <h4 class="h6 g-pr-20 mb-0">
-                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Portfolio</a>
+                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="{{url('/Categorias')}}">Categorias</a>
                 <i class="fa fa-angle-right g-absolute-centered--y g-right-0"></i>
               </h4>
                 </li>
                 <li class="g-pos-rel g-brd-bottom g-brd-white-opacity-0_1 g-py-10">
                   <h4 class="h6 g-pr-20 mb-0">
-                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Our Services</a>
+                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="{{url('/Servicios')}}">Servicios</a>
                 <i class="fa fa-angle-right g-absolute-centered--y g-right-0"></i>
               </h4>
                 </li>
                 <li class="g-pos-rel g-brd-bottom g-brd-white-opacity-0_1 g-py-10">
                   <h4 class="h6 g-pr-20 mb-0">
-                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Latest Jobs</a>
+                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="{{url('/Empresa')}}">Empresa</a>
                 <i class="fa fa-angle-right g-absolute-centered--y g-right-0"></i>
               </h4>
                 </li>
                 <li class="g-pos-rel g-py-10">
                   <h4 class="h6 g-pr-20 mb-0">
-                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Contact Us</a>
+                <a class="g-color-white-opacity-0_8 g-color-white--hover" href="{{url('/Contactanos')}}">Contáctanos</a>
                 <i class="fa fa-angle-right g-absolute-centered--y g-right-0"></i>
               </h4>
                 </li>
@@ -106,7 +106,7 @@
           <!-- Footer Content -->
           <div class="col-lg-3 col-md-6">
             <div class="u-heading-v2-3--bottom g-brd-white-opacity-0_8 g-mb-20">
-              <h2 class="u-heading-v2__title h6 text-uppercase mb-0">Our Contacts</h2>
+              <h2 class="u-heading-v2__title h6 text-uppercase mb-0">Nuestros Contactos</h2>
             </div>
 
             <address class="g-bg-no-repeat g-font-size-12 mb-0" style="background-image: url( {{ asset('assets3/img/maps/map2.png')}} );">
@@ -117,7 +117,7 @@
                 <i class="fa fa-map-marker"></i>
               </span>
             </div>
-            <p class="mb-0">795 Folsom Ave, Suite 600, <br> San Francisco, CA 94107 795</p>
+            <p class="mb-0">San Alfonso 693, <br> Santiago, Chile</p>
           </div>
           <!-- End Location -->
 
@@ -142,7 +142,7 @@
             <p class="mb-0">
               <a class="g-color-white-opacity-0_8 g-color-white--hover" href="mailto:info@htmlstream.com">info@htmlstream.com</a>
               <br>
-              <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">www.htmlstream.com</a>
+              <a class="g-color-white-opacity-0_8 g-color-white--hover" href="www.hydlimitada.com">www.hydlimitada.com</a>
             </p>
           </div>
           <!-- End Email and Website -->
@@ -160,28 +160,28 @@
         <div class="row">
           <div class="col-md-8 text-center text-md-left g-mb-10 g-mb-0--md">
             <div class="d-lg-flex">
-              <small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md">2018 &copy; All Rights Reserved.</small>
+              <small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md">2018 &copy; Todos los derechos reservados.</small>
               <ul class="u-list-inline">
                 <li class="list-inline-item">
-                  <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Privacy Policy</a>
+                  <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Policita de Privacidad</a>
                 </li>
                 <li class="list-inline-item">
                   <span>|</span>
                 </li>
                 <li class="list-inline-item">
-                  <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Terms of Use</a>
+                  <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Terminos de uso</a>
                 </li>
                 <li class="list-inline-item">
                   <span>|</span>
                 </li>
                 <li class="list-inline-item">
-                  <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">License</a>
+                  <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Licencia</a>
                 </li>
                 <li class="list-inline-item">
                   <span>|</span>
                 </li>
                 <li class="list-inline-item">
-                  <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Support</a>
+                  <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Soporte</a>
                 </li>
               </ul>
             </div>

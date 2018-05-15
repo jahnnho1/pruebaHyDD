@@ -19,6 +19,8 @@ class homeController extends Controller
                  ->join('tipo_producto','tipo_producto.tpr_id','=','producto.tpr_id')               
                  ->take(6)->get();
      
+         $Recurso = new Recurso();
+         
          
     //SELECT * FROM producto inner join recurso on producto.pro_id = recurso.pro_id 
     //inner join tipo_producto on tipo_producto.tpr_id = producto.tpr_id
@@ -26,7 +28,19 @@ class homeController extends Controller
         // $nuevosProductos = Recurso::find($pene);
         // dd($nuevosProductos);
         
-         return view('welcome', ['nuevosProductos' => $nuevosProductos,] );        
+         return view('welcome', ['nuevosProductos' => $nuevosProductos,'Recurso' => $Recurso] );        
+    }
+    
+    
+    public function homeServicio()
+    {        
+         return view('servicios');        
+    }
+    
+    
+    public function homeEmpresa()
+    {        
+         return view('empresa');        
     }
     
     

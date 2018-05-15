@@ -24,14 +24,14 @@ class productoRequest extends FormRequest
     public function rules()
     {
         return [
-            'especialidadTitulo' => ['required','max:20']
+            'productoNombre' => ['required','max:20']
         ];
     }
     
      public function messages()
     {
         return [
-           'especialidadTitulo.required' => 'Por favor, escribe el nombre del producto.'
+           'productoNombre.required' => 'Por favor, escribe el nombre del producto.'
         ];
     }   
     

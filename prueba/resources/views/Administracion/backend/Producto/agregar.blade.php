@@ -42,22 +42,23 @@
         
      
                     
-                    <h4 class="m-t-0">Titulo</h4>
-                    <input class="form-control" type="text" placeholder="Titulo" name="especialidadTitulo">
+                    <h4 class="m-t-0">Nombre</h4>
+                    <input class="form-control" type="text"  name="productoNombre">
                     
-                     <h4 class="m-t-0">Tipo de especialidad</h4>
-                    <select class="form-control input-sm" name="especialidadFormato" >
                     
+                    <h4 class="m-t-0">Codigo Serial</h4>
+                    <input class="form-control" type="text"  name="productoCodigo">
+                    
+                      <h4 class="m-t-0">Descripción</h4>
+                    <textarea class="form-control" rows="2" id="comment" name="productoDescripcion" maxlength="1000"></textarea>
+
+                    <h4 class="m-t-0">Categoria</h4>
+                    
+                     <select class="form-control input-sm" name="productoCategoria">                         
+                          @foreach($Categorias as $Categoria)
+                                <option value="{{$Categoria->tpr_id }}">{{$Categoria->tpr_nombre }}</option>
+                          @endforeach
                     </select>
-                    
-                    <h4 class="m-t-0">Breve descripcion</h4>
-                    <textarea class="form-control" rows="2" id="comment" name="especialidadBreveDescripcion" maxlength="160" placeholder="Un maximo de 160 Caracteres"></textarea>
-                    
-                    
-                    <h4 class="m-t-0">Descripcion</h4>
-                    <textarea class="form-control" rows="5" id="comment" name="especialidadDescripcion"></textarea>
-
-
                     
                     
          
@@ -66,7 +67,7 @@
                                 <span class="btn btn-success fileinput-button">
                                     <i class="fa fa-plus"></i>
                                     <span>Agregar Imagen...</span>
-                                    <input type="file" name="imagenBreveDescripcion" multiple>
+                                    <input type="file" name="productoImagen" multiple>
                                 </span>
                             </div>
                     </div>

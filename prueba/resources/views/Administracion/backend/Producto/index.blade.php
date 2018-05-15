@@ -69,18 +69,12 @@
                                         <tr class="odd gradeX">
                                             <td>{{$pro->pro_id }}</td>
                                             <td>{{$pro->pro_codigo_serial }}</td>
-                                            <td>{{$pro->pro_nombre }}</td>                                   
-                                           
-                                            
-                                            @if($pro->pro_estado == 1) 
+                                            <td>{{$pro->pro_nombre }}</td> 
+                                            @if($pro->pro_estado == 0) 
                                              <td>  <span class="label label-success">Activo</span></td>
                                             @else                                     
                                               <td>  <span class="label label-danger">Inactivo</span></td>
                                             @endif
-                                            
-                                            
-                                            
-                                            
                                             <td>{{$pro->created_at }}</td>                                                                                  
                                             <td>
                                                 <a class="btn btn-icon btn-sm" title="Modificar MP"  href="">                                    

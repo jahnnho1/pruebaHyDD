@@ -16,6 +16,7 @@ class productoController extends Controller
     {
         $viewProducto = Producto::find($id);
         //dd($viewProducto);
+        $Recurso = new Recurso();
         
         $imagesProducto = DB::table('producto')
         ->join('recurso','producto.pro_id','=','recurso.pro_id')
@@ -31,11 +32,11 @@ class productoController extends Controller
                         ->where('producto.pro_id','=',2)
                 ->take(6)->get();
             
-            return view('cliente.producto', ['viewProducto' => $viewProducto,'imagesProducto' => $imagesProducto] );
+            return view('cliente.producto', ['viewProducto' => $viewProducto,'imagesProducto' => $imagesProducto, 'Recurso' => $Recurso] );
         }
        
        // dd($imagesProducto);
-        return view('cliente.producto', ['viewProducto' => $viewProducto,'imagesProducto' => $imagesProducto] ); 
+        return view('cliente.producto', ['viewProducto' => $viewProducto,'imagesProducto' => $imagesProducto, 'Recurso' => $Recurso] ); 
         
     }  
     

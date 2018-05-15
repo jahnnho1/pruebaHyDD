@@ -60,4 +60,8 @@ class TipoProducto extends Eloquent
 	{
 		return $this->hasMany(\App\Models\Recurso::class, 'tpr_id');
 	}
+        
+        
+        
+        
 }

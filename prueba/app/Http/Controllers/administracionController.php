@@ -37,7 +37,7 @@ class administracionController extends Controller
     {   
          $Categorias = DB::table('tipo_producto')                 
                  ->where('tipo_producto.tpr_eliminado','=',TipoProducto::eliminado_false)               
-                 ->get();
+                 ->paginate(10);
          
        //  dd($Categorias);
          

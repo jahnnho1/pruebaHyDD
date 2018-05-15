@@ -35,6 +35,20 @@ class Recurso extends Eloquent
 {
 	protected $table = 'recurso';
 	protected $primaryKey = 'rec_id';
+        
+        
+        const tipo_imagen = 1;
+        const tipo_video = 2;
+        
+        const es_principal = 1;
+        const no_es_princial = 2;
+        
+        const estado_activo = 0;
+        const estado_inactivo = 1;
+        
+        const eliminado_false = 0;
+        const eliminado_true = 1;
+        
 
 	protected $casts = [
 		'usu_id' => 'int',
@@ -73,4 +87,16 @@ class Recurso extends Eloquent
 	{
 		return $this->belongsTo(\App\Models\TipoProducto::class, 'tpr_id');
 	}
+        
+        public function getImagenAttribute($rec_url){
+            
+            if(!$rec_url || starts_with($rec_url, 'http')){
+                return $rec_url;
+            }
+            
+            return \Storage::disk('public')->url($rec_url);
+            
+        }
+        
+        
 }

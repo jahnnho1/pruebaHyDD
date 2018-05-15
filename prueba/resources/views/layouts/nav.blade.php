@@ -27,42 +27,38 @@
               </a>
                 </li>
                 <li class="nav-item hs-has-sub-menu g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
-                  <a href="#!" class="nav-link" id="nav-link-1" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1">Categorias
+                  <a href="{{url('/Categorias')}}" class="nav-link" id="nav-link-1" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1">Categorias
                 
               </a>
                   <!-- Submenu -->
                   <ul class="hs-sub-menu list-unstyled g-mt-17--lg g-mt-7--lg--scrolling" id="nav-submenu-1" aria-labelledby="nav-link-1">
-                    <li><a href="#!">Page 1</a>
+                    <li><a href="#!">Accesorios</a>
+                    </li>          
+                    <li><a href="#!">Llantas</a>
                     </li>
-          
-                    <li><a href="#!">Page 3</a>
+                    <li><a href="#!">Luces</a>
                     </li>
-                    <li><a href="#!">Page 4</a>
+                    <li><a href="#!">Neumáticos</a>
                     </li>
-                    <li><a href="#!">Page 5</a>
+                    <li><a href="#!">Radios</a>
                     </li>
-                    <li><a href="#!">Page 6</a>
-                    </li>
-                    <li><a href="#!">Page 7</a>
-                    </li>
+                    
                   </ul>
                   <!-- End Submenu -->
                 </li>
                 <li class="nav-item g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
-                  <a href="#!" class="nav-link">Features
+                  <a href="{{url('/Servicios')}}" class="nav-link">Servicios
                 
               </a>
                 </li>
                 <li class="nav-item g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg ">
-                  <a href="#!" class="nav-link">Shortcodes
-                <span class="sr-only">(current)</span>
+                  <a href="{{url('/Empresa')}}" class="nav-link">Empresa                
               </a>
                 </li>
            
                 <li class="nav-item g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
-                  <a href="{{url('/ingresoCliente')}}" class="nav-link g-bg-primary"> Crear cuenta/Ingresar
-                
-              </a>
+                  <a href="{{url('/ingresoCliente')}}" class="nav-link g-bg-primary"> Crear cuenta/Ingresar                
+                </a>
                 </li>
               </ul>
             </div>

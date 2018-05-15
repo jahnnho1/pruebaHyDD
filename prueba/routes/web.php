@@ -14,6 +14,8 @@
 Route::get('/', 'homeController@home');
 Route::get('/producto/{id}', 'productoController@vistaProducto');
 Route::get('/ingresoCliente', 'ingresoClienteController@homeIngreso');
+Route::get('/Empresa', 'homeController@homeEmpresa');
+Route::get('/Servicios', 'homeController@homeServicio');
 
 
 

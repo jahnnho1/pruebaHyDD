@@ -23,7 +23,7 @@
                                                         <p>5<small> Productos Agregados </small></p>	
 						</div>
 						<div class="stats-link">
-							<a href="{{url('/Administracion/agregarProductoAdm')}}">Agregar <i class="fa fa-arrow-circle-o-right"></i></a>
+							<a href="{{url('/Administracion/agregarCategoriaAdm')}}">Agregar <i class="fa fa-arrow-circle-o-right"></i></a>
 						</div>
 					</div>
 				</div>
@@ -105,38 +105,15 @@
                        
                                 </tbody>
 
-                            </table>
+                            </table>                            
                             
                             
-                            
-                            
-                   
-                                <div>
-                                    <ul class="pagination m-t-0 m-b-10">
-                                     
-                                            <li class="disabled"><a>«</a></li>
-                                            <li class="disabled"><a>Anterior</a></li>
-                                     
-                                            <li><a href="">«</a></li>
-                                            <li><a href="">Anterior</a></li>
-                                       
-                                       
-                                                <li class="active">
-                                                    <a>1</a>
-                                                </li>
-                                                                  
-                                                <li><a href=""></a></li>
-                    
-                                            <li class="disabled"><a>Siguiente</a></li>
-                                            <li class="disabled"><a>»</a></li>
-                               
-                                            <li><a href="">Siguiente</a></li>
-                                            <li><a href="">»</a></li>
-                                
-                                    </ul>
-                                </div>     
-                                
-
+                            <div class="mt-2 mx-auto">
+                              @if(count($Categorias))
+                              {{ $Categorias->links('pagination::bootstrap-4')}}
+                              
+                               @endif
+                        </div>  
 
 
 

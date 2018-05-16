@@ -3,13 +3,15 @@
             @extends('layouts.topBar')
        
    
-            @include('layouts.slider')
+
   
         
       <!-- Login -->
     <section class="dzsparallaxer auto-init height-is-based-on-content use-loading mode-scroll loaded dzsprx-readyall" data-options="{direction: 'reverse', settings_mode_oneelement_max_offset: '150'}">
-      <!-- Parallax Image -->
-      <div class="divimage dzsparallaxer--target w-100 u-bg-overlay g-bg-size-cover g-bg-bluegray-opacity-0_3--after" style="height: 140%; background-image: url(assets/img-temp/1920x1080/img2.jpg);"></div>
+        <br><br><br><br>
+        
+        <!-- Parallax Image -->
+      <div class="divimage dzsparallaxer--target w-100 u-bg-overlay g-bg-size-cover g-bg-bluegray-opacity-0_3--after" style="height: 140%; background-image: url(imgVarias/ingreso.jpg);"></div>
       <!-- End Parallax Image -->
 
       <div class="container g-pt-100 g-pb-20">
@@ -60,8 +62,8 @@
 
           <div class="col-md-6 flex-md-first align-self-center g-mb-80">
             <div class="mb-5">
-              <h1 class="h3 g-color-white g-font-weight-600 mb-3">Profitable contracts,<br>invoices &amp; payments for the best cases!</h1>
-              <p class="g-color-white-opacity-0_8 g-font-size-12 text-uppercase">Trusted by 31,000+ users globally</p>
+              <h1 class="h3 g-color-white g-font-weight-600 mb-3">Historial de cotizaciones, suscripción de nuestros nuevos productos, descuentos y mucho mas. </h1>
+              <p class="g-color-white-opacity-0_8 g-font-size-12 text-uppercase">CON LA CONFIANZA DE NUESTROS USUARIOS EN TODO EL MUNDO</p>
             </div>
 
             <div class="row">
@@ -74,7 +76,7 @@
                     </span>
                   </div>
                   <div class="media-body align-self-center">
-                    <p class="g-color-white mb-0">Reliable contracts, multifanctionality &amp; best usage of Unify template</p>
+                    <p class="g-color-white mb-0">¡Contratos confiables, multifuncionalidad y los mejores productos, rentabilidad absoluta!!</p>
                   </div>
                 </div>
                 <!-- End Icon Blocks -->
@@ -87,18 +89,18 @@
                     </span>
                   </div>
                   <div class="media-body align-self-center">
-                    <p class="g-color-white mb-0">Secure &amp; integrated options to create individual &amp; business websites</p>
+                    <p class="g-color-white mb-0">Múltiples  formas de pago seguras, realza cotizaciones con nosotros.</p>
                   </div>
                 </div>
                 <!-- End Icon Blocks -->
 
                 <!-- Testimonials -->
-                <blockquote class="u-blockquote-v1 g-color-main rounded g-pl-60 g-pr-30 g-py-25 g-mb-40">Look no further you came to the right place. Unify offers everything you have dreamed of in one package.</blockquote>
+                <blockquote class="u-blockquote-v1 g-color-main rounded g-pl-60 g-pr-30 g-py-25 g-mb-40">No busques más, llegaste al lugar correcto. H&D ofrece todo lo que has soñado en un solo lugar.</blockquote>
                 <div class="media">
                   <img class="d-flex align-self-center rounded-circle g-width-40 g-height-40 mr-3" src="{{ asset('assets/img-temp/100x100/img12.jpg')}}" alt="Image Description">
                   <div class="media-body align-self-center">
                     <h4 class="h6 g-color-primary g-font-weight-600 g-mb-0">Alex Pottorf</h4>
-                    <em class="g-color-white g-font-style-normal g-font-size-12">Web Developer</em>
+                    <em class="g-color-white g-font-style-normal g-font-size-12">CEO H&D</em>
                   </div>
                 </div>
                 <!-- End Testimonials -->

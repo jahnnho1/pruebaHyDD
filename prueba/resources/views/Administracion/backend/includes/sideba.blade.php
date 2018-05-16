@@ -46,6 +46,7 @@
                         <li class="" >     <a  href="{{url('/Administracion/categoriaAdministrativa')}} " data-id=>  <i class=" fa fa-bank "> Categorias </i></a></li> 
                         <li class="" >     <a  href="{{url('/Administracion/productoAdministrativa')}} " data-id=>  <i class=" fa fa-bank "> Productos </i></a></li>  
                         <li class="" >     <a  href="{{url('/')}} " data-id=>  <i class=" fa fa-bank "> Usuarios </i></a></li>  
+                        <li class="" >     <a  href="{{url('/Administracion/homePageAdministrativa')}} " data-id=>  <i class=" fa fa-bank "> HomePage </i></a></li>  
                             
                 </ul>
             </li>    

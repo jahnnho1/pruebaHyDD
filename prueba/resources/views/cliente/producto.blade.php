@@ -88,7 +88,7 @@
 
                 <hr class="g-brd-gray-light-v3 g-my-15">
 
-                <!-- Article Review -->
+<!--                 Article Review 
                 <div class="g-mb-30">
                   <div class="js-rating d-inline-block g-color-primary g-font-size-13 g-mr-10" data-rating="3" data-spacing="2"></div>
                   <span class="g-color-gray-dark-v5">
@@ -98,7 +98,7 @@
                     <a class="g-color-gray-dark-v5" href="#!">Agregar Review</a>
                   </span>
                 </div>
-                <!-- End Article Review -->
+                 End Article Review -->
 
                 <p class="g-mb-25">{{$viewProducto->pro_descripcion }}</p>
 

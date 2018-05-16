@@ -16,12 +16,14 @@ Route::get('/producto/{id}', 'productoController@vistaProducto');
 Route::get('/ingresoCliente', 'ingresoClienteController@homeIngreso');
 Route::get('/Empresa', 'homeController@homeEmpresa');
 Route::get('/Servicios', 'homeController@homeServicio');
+Route::get('/Categorias', 'homeController@homeCategorias');
 
 
-
-
-
-
+/* * 
+ * Categoria* 
+ * /
+ */
+Route::get('/Categorias/{id}', 'productoController@categoria');
 
 
 
@@ -36,6 +38,7 @@ Route::get('/Servicios', 'homeController@homeServicio');
 Route::get('/Administracion/areaAdministrativa', 'administracionController@homeAdministracion');
 Route::get('/Administracion/productoAdministrativa', 'administracionController@homeProducto');
 Route::get('/Administracion/categoriaAdministrativa', 'administracionController@homeCategoria');
+Route::get('/Administracion/homePageAdministrativa', 'administracionController@homePageAdministracion');
 
 /*
  * Admin Producto

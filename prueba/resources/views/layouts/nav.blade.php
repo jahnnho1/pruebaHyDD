@@ -12,11 +12,12 @@
             </button>
             <!-- End Responsive Toggle Button -->
 
-            <!-- Logo -->
+  
             <a href="{{url('/')}}" class="navbar-brand">
-              <img src="{{ asset('assets/img/logo/logo-1.png')}}" alt="Image Description">
+            <!--  <img src="{{ asset('assets/img/logo/logo-1.png')}}" alt="Image Description"> -->
+              <img src="{{ asset('imgVarias/logo1.png')}}" style="max-width: 99px" alt="Image Description"> 
             </a>
-            <!-- End Logo -->
+            <!-- End Logo 
 
             <!-- Navigation -->
             <div class="collapse navbar-collapse align-items-center flex-sm-row g-pt-10 g-pt-5--lg" id="navBar">
@@ -32,16 +33,14 @@
               </a>
                   <!-- Submenu -->
                   <ul class="hs-sub-menu list-unstyled g-mt-17--lg g-mt-7--lg--scrolling" id="nav-submenu-1" aria-labelledby="nav-link-1">
-                    <li><a href="#!">Accesorios</a>
+                    
+                    @forelse($categorias as $npr)   
+                    <li><a href="{{url('/Categorias')}}/{{$npr->tpr_id}}">{{$npr->tpr_nombre}}</a>
                     </li>          
-                    <li><a href="#!">Llantas</a>
-                    </li>
-                    <li><a href="#!">Luces</a>
-                    </li>
-                    <li><a href="#!">Neumáticos</a>
-                    </li>
-                    <li><a href="#!">Radios</a>
-                    </li>
+                      @empty
+                    <li> <a href="#!"> No existen categorias disponibles  </a></li> 
+
+                   @endforelse
                     
                   </ul>
                   <!-- End Submenu -->
@@ -109,8 +108,8 @@
                   </div>
 
                   <div class="d-flex flex-row align-items-center justify-content-between g-font-size-18">
-                    <a href="#!" class="btn u-btn-outline-primary rounded-0 g-width-120">View Cart</a>
-                    <a href="#!" class="btn u-btn-primary rounded-0 g-width-120">Checkout</a>
+                    <a href="#!" class="btn u-btn-outline-primary rounded-0 g-width-120">Ver Carrito</a>
+                    <a href="#!" class="btn u-btn-primary rounded-0 g-width-120">Cotización </a>
                   </div>
                 </div>
               </div>

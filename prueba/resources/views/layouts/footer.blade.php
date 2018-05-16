@@ -7,7 +7,7 @@
           <p class="lead g-font-weight-400 g-mr-20--md g-mb-15 g-mb-0--md"> Ofrecemos el mejor servicio para tus necesidades</p>
         </div>
         <div class="align-self-md-center">
-          <a class="btn btn-lg u-btn-white text-uppercase g-font-weight-600 g-font-size-12" target="_blank" href="https://wrapbootstrap.com/theme/unify-responsive-website-template-WB0412697?ref=htmlstream">Solicitar presupuesto </a>
+          <a class="btn btn-lg u-btn-white text-uppercase g-font-weight-600 g-font-size-12" target="_blank" href="{{url('/ingresoCliente')}}">Solicitar Cotización </a>
         </div>
       </div>
     </section>
@@ -163,13 +163,13 @@
               <small class="d-block g-font-size-default g-mr-10 g-mb-10 g-mb-0--md">2018 &copy; Todos los derechos reservados.</small>
               <ul class="u-list-inline">
                 <li class="list-inline-item">
-                  <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Policita de Privacidad</a>
+                  <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Política de Privacidad</a>
                 </li>
                 <li class="list-inline-item">
                   <span>|</span>
                 </li>
                 <li class="list-inline-item">
-                  <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Terminos de uso</a>
+                  <a class="g-color-white-opacity-0_8 g-color-white--hover" href="#!">Términos de uso</a>
                 </li>
                 <li class="list-inline-item">
                   <span>|</span>

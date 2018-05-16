@@ -18,8 +18,8 @@
             convenientes del mercado automotriz. </p>
             <p>Ofrecemos un modelo integral de servicio para satisfacer sus necesidades en cuanto a la compra y envíos de productos exclusivos y de calidad.</p>
           </div>
-          <a class="btn btn-xl u-btn-outline-black g-font-size-default mr-2" href="#!">Explorar productos</a>
-          <a class="btn btn-xl u-btn-primary g-font-size-default" href="#!">Mas Información</a>
+          <a class="btn btn-xl u-btn-outline-black g-font-size-default mr-2" href="{{url('/Categorias')}}">Explorar productos</a>
+          <a class="btn btn-xl u-btn-primary g-font-size-default" href="{{url('/Empresa')}}">Mas Información</a>
         </div>
 
         <div class="col-lg-6 g-mb-60">

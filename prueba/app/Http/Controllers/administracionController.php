@@ -51,6 +51,22 @@ class administracionController extends Controller
     }
     
     
+        public function homePageAdministracion()
+    {   
+        
+         
+       //  dd($Categorias);
+         
+        //SELECT * FROM producto inner join recurso on producto.pro_id = recurso.pro_id 
+        //inner join tipo_producto on tipo_producto.tpr_id = producto.tpr_id
+         
+        // $nuevosProductos = Recurso::find($pene);
+        // dd($nuevosProductos);
+        
+         return view('Administracion.backend.homeAdministracion.index');  
+    }
+    
+    
     
     
     

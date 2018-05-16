@@ -13,7 +13,7 @@
         <div id="shortcode15">
           <div class="shortcode-html">
             <!-- Life at -->
-            <div class="g-bg-img-hero g-bg-pos-top-center g-bg-size-cover g-bg-cover g-bg-black-opacity-0_8--after" style="background-image: url(assets/img-temp/1920x800/img31.jpg);">
+            <div class="g-bg-img-hero g-bg-pos-top-center g-bg-size-cover g-bg-cover g-bg-black-opacity-0_8--after" style="background-image: url(imgVarias/ingreso.jpg);">
                 <br>    <br>    <br>    <br>           
                 
               <div class="container g-pos-rel g-z-index-1 g-pt-100 g-pb-50">
@@ -45,7 +45,7 @@
                       <img class="img-fluid g-max-width-400" src="imgVarias/empresa3.jpg" alt="Image description">
                     </div>
 
-                    <div class="js-slide" data-title="03. Production">
+                    <div class="js-slide" data-title="03. Producciòn">
                       <img class="img-fluid g-max-width-400" src="imgVarias/empresa4.jpg" alt="Image description">
                     </div>
 
@@ -74,23 +74,28 @@
                     </div>
 
                     <div class="js-slide">
-                      <h3 class="g-color-white mb-4">Creative Studio</h3>
-                      <p class="g-color-white-opacity-0_8 g-line-height-2">This is where we sit down, grab a cup of coffee and dial in the details. Understanding the task at hand and ironing out the wrinkles is key. Working together on the daily requires each individual to let the greater good of the team's
-                        work surface above their own ego.</p>
-                      <p class="g-color-white-opacity-0_8 g-line-height-2">The time has come to bring those ideas and plans to life. This is where we really begin to visualize your napkin sketches and make them into beautiful pixels. Whether through commerce or just an experience to tell your brand's story,
-                        the time has come to start using development languages that fit your projects needs. Now that your brand is all dressed up and ready to party, it's time to release it to the world. By the way, let's celebrate already.</p>
+                      <h3 class="g-color-white mb-4">Creatividad</h3>
+                      <p class="g-color-white-opacity-0_8 g-line-height-2">Aquì es donde nos sentamos, tomamos una taza de cafè y marcamos los detalles. Comprender la tarea y resolver los problemas clave. Trabajar juntos en el dìa requiere que cada mienbro del equipo de trabajo supere a su propio ego</p>
+                      <p class="g-color-white-opacity-0_8 g-line-height-2"></p>
                     </div>
 
+                      
+                                          <div class="js-slide">
+                      <h3 class="g-color-white mb-4">Visiòn</h3>
+                      <p class="g-color-white-opacity-0_8 g-line-height-2">Importadora H&D quiere posicionarse en el mercado del rubro automotriz como una empresa que se caracterice por su atención dedicada, responsable, cuyos productos son de calidad y representan una buena opción.</p>
+                  <p class="g-color-white-opacity-0_8 g-line-height-2">Queremos anticiparnos a las necesidades de nuestros clientes aumentando nuestra diversidad de productos, implementando nuevas tecnologías y así responder en forma eficiente a las nuevas tendencias.</p>
+                  <p class="g-color-white-opacity-0_8 g-line-height-2">Nuestro esfuerzo está dirigido a cubrir a todos los pequeños y medianos clientes ubicados desde Arica a Punta Arenas, creando lazos de confianza y entrega oportuna de nuestros productos.</p>
+                    
+                    
+                    </div>
+                      
                     <div class="js-slide">
-                      <h3 class="g-color-white mb-4">The Best Project Planner</h3>
-                      <p class="g-color-white-opacity-0_8 g-line-height-2">It's important to stay detail oriented with every project we tackle. Staying focused allows us to turn every project we complete into something we love. We strive to embrace and drive change in our industry which allows us to keep
-                        our clients relevant and ready to adapt. As creatives, it's important that we strive to do work outside of obligation. This lets us stay ahead of the curve for our clients and internal projects.</p>
+                      <h3 class="g-color-white mb-4">Misiòn</h3>
+                      <p class="g-color-white-opacity-0_8 g-line-height-2">Importadora H&D es una empresa dedicada a la venta de repuestos y accesorios para vehículos motorizados.
+Nuestra misión es mantenernos en el mercado como una empresa alternativa que ofrezca productos de calidad, cubriendo las necesidades de nuestros clientes a lo largo y ancho del País.</p>
                     </div>
 
-                    <div class="js-slide">
-                      <h3 class="g-color-white mb-4">Production</h3>
-                      <p class="g-color-white-opacity-0_8 g-line-height-2">At the end of the day, it's important to not let being busy distract us from having fun. Smiling, laughing, and hanging helps us work together to achieve this.</p>
-                    </div>
+
                   </div>
                 </div>
                 <!-- End Life at - Carousel 2 -->

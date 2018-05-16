@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use App\Models\TipoProducto;
+use App\Models\Producto;
 
 class DatabaseSeeder extends Seeder
 {
@@ -13,8 +14,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // $this->call(UsersTableSeeder::class);
-        factory(TipoProducto::Class)
-                ->times(15)
+        factory(Producto::Class)
+                ->times(30)
                 ->create();
         
     }

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Producto;
 use App\Models\Recurso;
 use Illuminate\Support\Facades\DB;
+use App\Models\TipoProducto;
 
 class homeController extends Controller
 {
@@ -21,6 +22,11 @@ class homeController extends Controller
      
          $Recurso = new Recurso();
          
+         $categorias = DB::table('tipo_producto')
+                ->where('tipo_producto.tpr_estado','=', TipoProducto::estado_activo)
+                ->where('tipo_producto.tpr_eliminado','=', TipoProducto::eliminado_false)                 
+                ->get();
+         
          
     //SELECT * FROM producto inner join recurso on producto.pro_id = recurso.pro_id 
     //inner join tipo_producto on tipo_producto.tpr_id = producto.tpr_id
@@ -28,19 +34,44 @@ class homeController extends Controller
         // $nuevosProductos = Recurso::find($pene);
         // dd($nuevosProductos);
         
-         return view('welcome', ['nuevosProductos' => $nuevosProductos,'Recurso' => $Recurso] );        
+         return view('welcome', ['nuevosProductos' => $nuevosProductos,'Recurso' => $Recurso, 'categorias' => $categorias] );        
     }
     
     
     public function homeServicio()
-    {        
-         return view('servicios');        
+    {   
+        $categorias = DB::table('tipo_producto')
+                ->where('tipo_producto.tpr_estado','=', TipoProducto::estado_activo)
+                ->where('tipo_producto.tpr_eliminado','=', TipoProducto::eliminado_false)                 
+                ->get();
+        
+         return view('servicios', ['categorias' => $categorias]);        
     }
     
     
     public function homeEmpresa()
+    {      
+                 $categorias = DB::table('tipo_producto')
+                ->where('tipo_producto.tpr_estado','=', TipoProducto::estado_activo)
+                ->where('tipo_producto.tpr_eliminado','=', TipoProducto::eliminado_false)                 
+                ->get();
+        
+        
+        
+         return view('empresa', ['categorias' => $categorias]);        
+    }
+    
+    
+    public function homeCategorias()
     {        
-         return view('empresa');        
+        $categorias = DB::table('tipo_producto')
+                ->where('tipo_producto.tpr_estado','=', TipoProducto::estado_activo)
+                ->where('tipo_producto.tpr_eliminado','=', TipoProducto::eliminado_false)                 
+                ->get();
+     
+         $Recurso = new Recurso();
+        
+         return view('categorias', ['categorias' => $categorias,'Recurso' => $Recurso] );            
     }
     
     

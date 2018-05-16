@@ -113,7 +113,7 @@
                               {{ $Categorias->links('pagination::bootstrap-4')}}
                               
                                @endif
-                        </div>  
+                           </div>  
 
 
 

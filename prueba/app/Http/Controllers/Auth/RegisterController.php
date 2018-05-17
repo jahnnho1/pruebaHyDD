@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\User;
+use App\Models\User;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
-
+use App\Models\TipoProducto;
+use Illuminate\Support\Facades\DB;
 class RegisterController extends Controller
 {
     /*
@@ -28,7 +29,7 @@ class RegisterController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new controller instance.
@@ -38,6 +39,17 @@ class RegisterController extends Controller
     public function __construct()
     {
         $this->middleware('guest');
+    }
+
+
+    public function showRegistrationForm()
+    {
+      $categorias = DB::table('tipo_producto')
+                ->where('tipo_producto.tpr_estado','=', TipoProducto::estado_activo)
+                ->where('tipo_producto.tpr_eliminado','=', TipoProducto::eliminado_false)                 
+                ->get();
+
+        return view('auth.register',['categorias' =>  $categorias,]);
     }
 
     /**
@@ -67,6 +79,11 @@ class RegisterController extends Controller
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
+            'usu_estado' => 0,
+            'usu_eliminado' => 0,
+
+
+
         ]);
     }
 }

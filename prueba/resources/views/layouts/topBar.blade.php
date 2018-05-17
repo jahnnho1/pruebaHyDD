@@ -8,6 +8,7 @@
               <i class="icon icon-weather-001 g-font-size-20 g-valign-middle g-mr-10"></i>
               Chile
             </div>
+                
 
             <div class="col-auto g-px-15">
               <i class="fa fa-phone g-valign-middle g-mr-5"></i>

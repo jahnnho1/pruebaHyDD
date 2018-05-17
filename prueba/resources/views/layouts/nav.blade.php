@@ -54,11 +54,63 @@
                   <a href="{{url('/Empresa')}}" class="nav-link">Empresa                
               </a>
                 </li>
-           
-                <li class="nav-item g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
-                  <a href="{{url('/ingresoCliente')}}" class="nav-link g-bg-primary"> Crear cuenta/Ingresar                
-                </a>
+                
+            
+                @guest
+             
+                        
+                        
+                         
+                    <li class="nav-item g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
+                      <a  class="nav-link g-bg-primary" href="{{ route('login') }}">{{ __('Crear cuenta/Ingresar') }} </a>
+                    </li>
+                @else
+
+
+                <li class="nav-item hs-has-sub-menu g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
+                  <a href="{{url('/Categorias')}}" class="nav-link" id="nav-link-1" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1"> 
+                    {{ Auth::user()->name }} </a>
+                  <ul class="hs-sub-menu list-unstyled g-mt-17--lg g-mt-7--lg--scrolling" id="nav-submenu-1" aria-labelledby="nav-link-1">
+
+                    <li> <a href="{{ route('logout') }}">
+                             Mi Cuenta   </a>
+                    </li>
+
+                    <li> <a href="{{ route('logout') }}">
+                             Cotizaciones   </a>
+                    </li>
+                    
+                    <li> <a href="{{ route('logout') }}" onclick="event.preventDefault();
+                                             document.getElementById('logout-form').submit();">
+                             Desconectarse   </a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                                @csrf
+                        </form>
+                    </li> 
+
+          
+                    
+                  </ul>
+                  <!-- End Submenu -->
                 </li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                @endguest            
+                            
+                
+                
               </ul>
             </div>
             

@@ -8,11 +8,14 @@
 namespace App\Models;
 
 use Reliese\Database\Eloquent\Model as Eloquent;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+
 
 /**
  * Class User
  * 
- * @property int $usu_id
+ * @property int $id
  * @property string $usu_nombre
  * @property string $usu_apellido
  * @property string $name
@@ -29,12 +32,34 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  *
  * @package App\Models
  */
-class User extends Eloquent
+class User extends Authenticatable
 {
-	protected $primaryKey = 'usu_id';
+
+
+	use Notifiable;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
+
+
+    /**
+     * The attributes that should be hidden for arrays.
+     *
+     * @var array
+     */
+    protected $hidden = [
+        'password', 'remember_token',
+    ];
+
+
+
+	protected $primaryKey = 'id';
         
         
-                const estado_activo = 0;
+        const estado_activo = 0;
         const estado_inactivo = 1;
         
         const eliminado_false = 0;
@@ -45,10 +70,7 @@ class User extends Eloquent
 		'usu_eliminado' => 'bool'
 	];
 
-	protected $hidden = [
-		'password',
-		'remember_token'
-	];
+
 
 	protected $fillable = [
 		'usu_nombre',

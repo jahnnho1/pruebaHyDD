@@ -1,6 +1,6 @@
 @extends('layouts.app')
      @section('content')
-            @extends('layouts.topBar')
+           @extends('layouts.topBar')
             @include('layouts.slider')
 
         

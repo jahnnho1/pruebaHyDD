@@ -35,23 +35,23 @@ Route::get('/Categorias/{id}', 'productoController@categoria');
  * /
  */
 
-Route::get('/Administracion/areaAdministrativa', 'administracionController@homeAdministracion');
-Route::get('/Administracion/productoAdministrativa', 'administracionController@homeProducto');
-Route::get('/Administracion/categoriaAdministrativa', 'administracionController@homeCategoria');
-Route::get('/Administracion/homePageAdministrativa', 'administracionController@homePageAdministracion');
+Route::get('/Administracion/areaAdministrativa', 'administracionController@homeAdministracion')->middleware('auth');
+Route::get('/Administracion/productoAdministrativa', 'administracionController@homeProducto')->middleware('auth');
+Route::get('/Administracion/categoriaAdministrativa', 'administracionController@homeCategoria')->middleware('auth');
+Route::get('/Administracion/homePageAdministrativa', 'administracionController@homePageAdministracion')->middleware('auth');
 
 /*
  * Admin Producto
  */
-Route::get('/Administracion/agregarProductoAdm', 'productoAdministracionController@agregarProducto');
-Route::post('/Administracion/EjecutarAgregarProductoAdm', 'productoAdministracionController@EjecutarAgregarProducto');
+Route::get('/Administracion/agregarProductoAdm', 'productoAdministracionController@agregarProducto')->middleware('auth');
+Route::post('/Administracion/EjecutarAgregarProductoAdm', 'productoAdministracionController@EjecutarAgregarProducto')->middleware('auth');
 
 
 /*
  * Admin Categoria
  */
-Route::get('/Administracion/agregarCategoriaAdm', 'categoriaAdministracionController@agregarCategoria');
-Route::post('/Administracion/EjecutarAgregarCategoriaAdm', 'categoriaAdministracionController@EjecutarAgregarCategoria');
+Route::get('/Administracion/agregarCategoriaAdm', 'categoriaAdministracionController@agregarCategoria')->middleware('auth');
+Route::post('/Administracion/EjecutarAgregarCategoriaAdm', 'categoriaAdministracionController@EjecutarAgregarCategoria')->middleware('auth');
 
 
 /*
@@ -61,8 +61,31 @@ Route::post('/Administracion/EjecutarAgregarCategoriaAdm', 'categoriaAdministrac
  */
 
 
-Route::get('/Administracion/agregarPromocionAdm', 'homepageAdministracionController@agregarPromocion');
-Route::post('/Administracion/EjecutarAgregarPromocionAdm', 'homepageAdministracionController@EjecutarAgregarPromocion');
+Route::get('/Administracion/agregarPromocionAdm', 'homepageAdministracionController@agregarPromocion')->middleware('auth');;
+Route::post('/Administracion/EjecutarAgregarPromocionAdm', 'homepageAdministracionController@EjecutarAgregarPromocion')->middleware('auth');;
 
-Route::get('/Administracion/agregarDestacadoAdm', 'homepageAdministracionController@agregarDestacado');
-Route::post('/Administracion/EjecutarAgregarDestacadoAdm', 'homepageAdministracionController@EjecutarAgregarDestacado');
+Route::get('/Administracion/agregarDestacadoAdm', 'homepageAdministracionController@agregarDestacado')->middleware('auth');;
+Route::post('/Administracion/EjecutarAgregarDestacadoAdm', 'homepageAdministracionController@EjecutarAgregarDestacado')->middleware('auth');;
+
+
+
+/*
+ * 
+ * Login
+ * 
+ */
+
+// Authentication Routes...
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+// Registration Routes...
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('register', 'Auth\RegisterController@register');
+
+// Password Reset Routes...
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset');

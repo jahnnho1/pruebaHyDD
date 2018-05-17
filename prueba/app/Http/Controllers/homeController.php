@@ -1,5 +1,4 @@
 <?php
-
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
@@ -11,17 +10,26 @@ use App\Models\PromocionHome;
 use App\Models\Destacado;
 
 class homeController extends Controller
+
 {
     //
     
-    public function home()
-    {
+    public function home(){
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+   
          //para realizar una quert
          $nuevosProductos = DB::table('producto')
                  ->join('recurso','producto.pro_id','=','recurso.pro_id')
                  ->join('tipo_producto','tipo_producto.tpr_id','=','producto.tpr_id')    
-                ->where('producto.pro_estado','=', TipoProducto::estado_activo)
-                ->where('producto.pro_eliminado','=', TipoProducto::eliminado_false)  
+                 ->where('producto.pro_estado','=', TipoProducto::estado_activo)
+                 ->where('producto.pro_eliminado','=', TipoProducto::eliminado_false)  
+                 ->where('recurso.rec_es_principal','=', Recurso::es_principal)   
+                 ->orderBy('producto.pro_id', 'DESC')
+
                  ->take(6)->get();
      
          $Recurso = new Recurso();
@@ -31,6 +39,7 @@ class homeController extends Controller
                 ->where('tipo_producto.tpr_eliminado','=', TipoProducto::eliminado_false)                 
                 ->get();
          
+
          
           $promocion_home1 = DB::table('promocion_home')
                  ->join('producto','producto.pro_id','=','promocion_home.prh_prod_id_1')
@@ -59,8 +68,12 @@ class homeController extends Controller
                  ->join('producto','producto.pro_id','=','destacados.pro_id')
                  ->join('recurso','recurso.pro_id','=','producto.pro_id')   
                  ->where('destacados.des_estado','=', TipoProducto::estado_activo)
-                 ->where('destacados.des_eliminado','=', TipoProducto::eliminado_false)                 
+                 ->where('destacados.des_eliminado','=', TipoProducto::eliminado_false) 
+                 ->where('recurso.rec_es_principal','=', Recurso::es_principal)                
                  ->get();
+
+
+
           
         // dd($promocion_home1);
          
@@ -79,6 +92,7 @@ class homeController extends Controller
              'promocion_home1' => $promocion_home1,'promocion_home2' => $promocion_home2,'promocion_home3' => $promocion_home3,
              'destacados' => $destacados,
              ] );        
+        $this->middleware('auth');
     }
     
     
@@ -116,6 +130,12 @@ class homeController extends Controller
          $Recurso = new Recurso();
         
          return view('categorias', ['categorias' => $categorias,'Recurso' => $Recurso] );            
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
     }
     
     

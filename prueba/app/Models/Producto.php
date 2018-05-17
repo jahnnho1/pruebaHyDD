@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sun, 13 May 2018 23:22:49 +0000.
+ * Date: Wed, 16 May 2018 18:38:34 +0000.
  */
 
 namespace App\Models;
@@ -30,6 +30,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * @property \App\Models\TipoProducto $tipo_producto
  * @property \App\Models\Proveedor $proveedor
  * @property \App\Models\SubCategorium $sub_categorium
+ * @property \Illuminate\Database\Eloquent\Collection $destacados
  * @property \Illuminate\Database\Eloquent\Collection $ficha_tecnicas
  * @property \Illuminate\Database\Eloquent\Collection $recursos
  *
@@ -39,12 +40,14 @@ class Producto extends Eloquent
 {
 	protected $table = 'producto';
 	protected $primaryKey = 'pro_id';
-
-        const estado_activo = 0;
-        const estado_inactivo = 1;
-        const eliminado_true = 1;
-        const eliminado_false = 0;       
         
+        
+                const estado_activo = 0;
+        const estado_inactivo = 1;
+        
+        const eliminado_false = 0;
+        const eliminado_true = 1;
+
 	protected $casts = [
 		'tpr_id' => 'int',
 		'prov_id' => 'int',
@@ -85,6 +88,11 @@ class Producto extends Eloquent
 		return $this->belongsTo(\App\Models\SubCategorium::class, 'sca_id');
 	}
 
+	public function destacados()
+	{
+		return $this->hasMany(\App\Models\Destacado::class, 'pro_id');
+	}
+
 	public function ficha_tecnicas()
 	{
 		return $this->hasMany(\App\Models\FichaTecnica::class, 'pro_id');
@@ -95,15 +103,11 @@ class Producto extends Eloquent
 		return $this->hasMany(\App\Models\Recurso::class, 'pro_id');
 	}
         
-        
-        public function getImagenAttribute($rec_url){
+        public function nombreProducto($id){
+            $producto = new Producto();
+            $producto = Producto::find($id);
             
-            if(!$rec_url || starts_with($rec_url, 'http')){
-                return $rec_url;
-            }
-            
-            return \Storage::disk('public')->url($rec_url);
-            
+            return $producto->pro_nombre;
         }
         
 }

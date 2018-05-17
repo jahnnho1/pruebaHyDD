@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sun, 13 May 2018 23:22:49 +0000.
+ * Date: Wed, 16 May 2018 18:38:35 +0000.
  */
 
 namespace App\Models;
@@ -36,8 +36,7 @@ class Recurso extends Eloquent
 	protected $table = 'recurso';
 	protected $primaryKey = 'rec_id';
         
-        
-        const tipo_imagen = 1;
+               const tipo_imagen = 1;
         const tipo_video = 2;
         
         const es_principal = 1;
@@ -48,6 +47,17 @@ class Recurso extends Eloquent
         
         const eliminado_false = 0;
         const eliminado_true = 1;
+        
+              
+        public function getImagenAttribute($rec_url){
+            
+            if(!$rec_url || starts_with($rec_url, 'http')){
+                return $rec_url;
+            }
+            return \Storage::disk('public')->url($rec_url);
+            
+      
+        }
         
 
 	protected $casts = [
@@ -87,16 +97,4 @@ class Recurso extends Eloquent
 	{
 		return $this->belongsTo(\App\Models\TipoProducto::class, 'tpr_id');
 	}
-        
-        public function getImagenAttribute($rec_url){
-            
-            if(!$rec_url || starts_with($rec_url, 'http')){
-                return $rec_url;
-            }
-            
-            return \Storage::disk('public')->url($rec_url);
-            
-        }
-        
-        
 }

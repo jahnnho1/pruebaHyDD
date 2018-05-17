@@ -7,124 +7,67 @@
 
         
             
-            
-            
-            
-            
-            <div class="g-bg-white">  
-            <br >     
-            </div>
-            
-           <!-- Banners -->
-<div class="row align-items-stretch g-bg-white ">
-  <div class="col-lg-4 offset-lg-1 col-xs-5">
-    <!-- Article -->
-    <article class="g-flex-middle g-bg-cover g-bg-size-cover g-bg-black-opacity-0_3--after g-py-75 g-px-50 g-mb-30" data-bg-img-src="assets/img-temp/400x270/img1.jpg">
-      <div class="g-flex-middle-item g-z-index-1 g-width-300">
-        <h3 class="g-color-white g-font-weight-700 text-uppercase g-letter-spacing-3 g-mb-15">Project planner</h3>
-        <div class="g-line-height-2 g-mb-20">
-          <p class="g-color-white-opacity-0_9">Fusce dolor libero, efficitur et lobortis at, faucibus nec nunc. Proin fermentum eget.</p>
-        </div>
-        <span class="g-color-primary g-font-weight-700 g-font-size-16 text-uppercase">From $20.00</span>
-      </div>
-    </article>
-    <!-- End Article -->
 
-    <!-- Article -->
-    <article class="text-uppercase text-center g-flex-middle g-bg-cover g-bg-size-cover g-bg-black-opacity-0_3--after g-color-white g-py-75 g-px-50" data-bg-img-src="assets/img-temp/400x270/img18.jpg">
-      <div class="g-flex-middle-item g-z-index-1">
-        <span class="d-inline-block g-brd-bottom g-brd-2 g-brd-primary g-font-weight-700 g-font-size-16 g-letter-spacing-1 g-pb-8 g-mb-20">Examples of branding projects</span>
-        <h3 class="h2 g-font-weight-700 g-letter-spacing-3 g-mb-35">Branding work</h3>
-        <a class="btn btn-md u-btn-outline-white g-font-weight-600 g-font-size-11 text-uppercase" href="#!">Learn More</a>
-      </div>
-    </article>
-    <!-- End Article -->
-  </div>
+            
 
-  <div class="col-lg-6 col-xs-7">
-    <!-- Article -->
-    <article class="h-100 g-flex-middle g-bg-cover g-bg-size-cover g-bg-black-opacity-0_3--after g-py-75 g-px-50" data-bg-img-src="assets/img-temp/500x650/img10.jpg">
-      <div class="g-flex-middle-item g-z-index-1 g-width-370">
-        <h2 class="g-font-weight-700 text-uppercase g-color-white g-mb-15">Pricing plans</h2>
-        <strong class="d-block g-color-white g-font-size-60 g-font-weight-700 text-uppercase g-line-height-1 g-letter-spacing-3 g-mb-25">
-          <span class="g-color-primary">40%</span>
-          OFF</strong>
-        <div class="g-line-height-2 g-mb-35">
-          <p class="g-color-white-opacity-0_9">This is where we sit down, grab a cup of coffee and dial in the details. Understanding the task at hand and ironing out the wrinkles is key.</p>
-        </div>
-        <a class="btn btn-md u-btn-outline-white g-font-weight-600 g-font-size-11 text-uppercase" href="#!">Learn More</a>
-      </div>
-    </article>
-    <!-- End Article -->
-  </div>
-</div>
-<!-- End Banners --> 
+               
 
+  
+   @if(count($destacados))  
             
           <!-- Product Blocks v7 -->
-   <section class="g-bg-white g-py-100">
-        <div class="text-center g-mb-50">
-          <h2 class="h4">Productos 
-            <span class="g-color-primary g-ml-5">Destacados</span>
-          </h2>
-        </div>
 
-        <div id="shortcode07">
+       
+       
+            <section class="g-bg-secondary g-py-20" >
+		              <div class="text-center g-mb-5 g-color-black  ">
+                                <h2 class="h4">Productos
+                                  <span class="g-color-primary g-ml-5 g-mb-5 ">Destacados</span>
+                                </h2>
+                                 </div>
+              </section>
+          
+      
+ <section class="g-bg-white g-py-100  g-bg-graylight-radialgradient-ellipse">
+        <div id="shortcode07 ">
           <div class="shortcode-html">
             <!-- Products Block -->
             <div class="js-carousel" data-vertical="true" data-pagi-classes="u-carousel-indicators-v28 text-center">
    
 
+                
+            @forelse($destacados as $npr)
               <div class="js-slide">
                 <!-- Article -->
                 <article class="row text-center">
                   <div class="col-lg-6 g-mb-50">
                     <!-- Article Info -->
-                    <span class="d-block g-color-gray-dark-v5 g-font-weight-700 g-font-size-12 text-uppercase g-mb-20">By Htmlstream</span>
-                    <h3 class="h1 g-color-black g-font-weight-700 text-uppercase g-line-height-1_2 g-mb-35">Leather Gloves</h3>
+                    <span class="d-block g-color-gray-dark-v5 g-font-weight-700 g-font-size-12 text-uppercase g-mb-20">{{$npr->des_descripcion_1}}</span>
+                    <h3 class="h1 g-color-black g-font-weight-700 text-uppercase g-line-height-1_2 g-mb-35">{{$npr->pro_nombre}}</h3>
                     <i class="d-block fa fa-circle g-mb-30"></i>
                     <div class="g-px-70--md g-mb-20">
-                      <p>Understanding who you are and what you want is our strategy for your health.</p>
+                      <p>{{$npr->des_descripcion_2}}</p>
+                       <p>{{$npr->des_descripcion_3}}</p>
                     </div>
-                    <span class="d-block g-font-weight-700 g-font-size-26 g-mb-20">$14.00</span>
-                    <button type="button" class="btn btn-md u-btn-primary g-font-weight-600 g-font-size-13 text-uppercase">Book Now</button>
+<!--                    <span class="d-block g-font-weight-700 g-font-size-26 g-mb-20">$14.00</span>-->
+            <a class="" href="{{url('/producto')}}/{{$npr->pro_id }}">        <button type="button" class="btn btn-md u-btn-primary g-font-weight-600 g-font-size-13 text-uppercase" > Ver</button></a>
                     <!-- End Article Info -->
                   </div>
 
                   <div class="col-lg-6 g-mb-50">
                     <!-- Article Image -->
-                    <img class="img-fluid mx-auto g-width-60x" src="imgVarias/carwal.jpg" alt="Image Description" style="height:350px; width: 350px">
+                    <img class="img-fluid mx-auto g-width-60x" src="{{ $Recurso->getImagenAttribute($npr->rec_url) }}" alt="Image Description" style="height:350px; width: 350px">
                     <!-- End Article Image -->
                   </div>
                 </article>
                 <!-- End Article -->
               </div>
                 
-                
-                 <div class="js-slide">
-                <!-- Article -->
-                <article class="row text-center">
-                  <div class="col-lg-6 g-mb-50">
-                    <!-- Article Info -->
-                    <span class="d-block g-color-gray-dark-v5 g-font-weight-700 g-font-size-12 text-uppercase g-mb-20">By Htmlstream</span>
-                    <h3 class="h1 g-color-black g-font-weight-700 text-uppercase g-line-height-1_2 g-mb-35">Leather Gloves</h3>
-                    <i class="d-block fa fa-circle g-mb-30"></i>
-                    <div class="g-px-70--md g-mb-20">
-                      <p>Understanding who you are and what you want is our strategy for your health.</p>
-                    </div>
-                    <span class="d-block g-font-weight-700 g-font-size-26 g-mb-20">$14.00</span>
-                    <button type="button" class="btn btn-md u-btn-primary g-font-weight-600 g-font-size-13 text-uppercase">Book Now</button>
-                    <!-- End Article Info -->
-                  </div>
+                 @empty
+                        Sin articulo en promoción
 
-                  <div class="col-lg-6 g-mb-50">
-                    <!-- Article Image -->
-                    <img class="img-fluid mx-auto g-width-60x" src="imgVarias/carwal.jpg" alt="Image Description" style="height:350px; width: 350px">
-                    <!-- End Article Image -->
-                  </div>
-                </article>
-                <!-- End Article -->
-              </div>            
+                 @endforelse
+               
                 
                 
                 
@@ -132,54 +75,33 @@
             <!-- End Products Block -->
           </div>
 
-          <div class="shortcode-styles">
-            <!-- CSS Implementing Plugins -->
-            <link type="text/plain" rel="stylesheet" href="assets/vendor/slick-carousel/slick/slick.css">
-          </div>
-
-          <div class="shortcode-scripts">
-            <!-- JS Implementing Plugins -->
-            <script type="text/plain" src="assets/vendor/slick-carousel/slick/slick.js"></script>
-
-            <!-- JS Unify -->
-            <script type="text/plain" src="assets/js/components/hs.carousel.js"></script>
-
-            <!-- JS Plugins Init. -->
-            <script type="text/plain">
-              $(document).ready(function () {
-                // initialization of carousel
-                $.HSCore.components.HSCarousel.init('.js-carousel');
-              });
-            </script>
-          </div>
+ 
         </div>
 
 
 
 
+       </section>
+      
+      
+         @endif
+        
+             <section class="g-bg-secondary g-py-20 " >
+		              <div class="text-center g-mb-5 g-color-black  ">
+                                <h2 class="h4">Nuevos
+                                  <span class="g-color-primary g-ml-5 g-mb-5 ">Productos</span>
+                                </h2>
+                                    
+                                 </div>
+              </section>
 
-      </section>
-      <!-- End Product Blocks v7 -->
-      
-      
-      
-      
-      
       
       
       
             
   <!-- Product Blocks v24 -->
-      <section class="g-bg-secondary g-py-100">
+      <section class="g-bg-white g-py-100  g-bg-graylight-radialgradient-ellipse">
         <div class="container">
-            
-            
-                      <div class="text-center g-mb-50">
-            <h2 class="h4">Nuevos
-              <span class="g-color-primary g-ml-5">Productos</span>
-            </h2>
-          </div>
- 
           <div id="shortcode24">
             <div class="shortcode-html">
               <div class="row g-mx-minus-10 g-mb-50">
@@ -204,12 +126,12 @@
                           
                         <a class="g-color-black g-color-primary--hover g-text-underline--none--hover" href="{{url('/producto')}}/{{$npr->pro_id }}">{{$npr->pro_nombre}}</a>
                       </h4>
-                      <a class="d-inline-block g-color-gray-dark-v5 g-font-size-13 g-mb-10" href="#!">{{$npr->tpr_nombre}}</a>
+                      <a class="d-inline-block g-color-gray-dark-v5 g-font-size-13 g-mb-10" href="{{url('/Categorias')}}/{{$npr->tpr_id}}">{{$npr->tpr_nombre}}</a>
                       <!-- End Article Info -->
 
                       <!-- Article Footer -->
                       <footer class="d-flex justify-content-between g-font-size-16">
-                        <span class="g-color-black g-line-height-1">$22.00</span>
+                       <span class="g-color-black g-line-height-1"> {{$npr->pro_codigo_serial }}</span>
                         <ul class="list-inline g-color-gray-light-v2 g-font-size-14 g-line-height-1">
                           <li class="list-inline-item align-middle g-brd-right g-brd-gray-light-v3 g-pr-10 g-mr-6">
                             <a class="g-color-gray-dark-v5 g-color-primary--hover g-text-underline--none--hover" href="#!" data-toggle="tooltip" data-placement="top" title="Add to Cart">

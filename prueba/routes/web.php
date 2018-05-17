@@ -52,3 +52,17 @@ Route::post('/Administracion/EjecutarAgregarProductoAdm', 'productoAdministracio
  */
 Route::get('/Administracion/agregarCategoriaAdm', 'categoriaAdministracionController@agregarCategoria');
 Route::post('/Administracion/EjecutarAgregarCategoriaAdm', 'categoriaAdministracionController@EjecutarAgregarCategoria');
+
+
+/*
+ * 
+ * Admin Home
+ * 
+ */
+
+
+Route::get('/Administracion/agregarPromocionAdm', 'homepageAdministracionController@agregarPromocion');
+Route::post('/Administracion/EjecutarAgregarPromocionAdm', 'homepageAdministracionController@EjecutarAgregarPromocion');
+
+Route::get('/Administracion/agregarDestacadoAdm', 'homepageAdministracionController@agregarDestacado');
+Route::post('/Administracion/EjecutarAgregarDestacadoAdm', 'homepageAdministracionController@EjecutarAgregarDestacado');

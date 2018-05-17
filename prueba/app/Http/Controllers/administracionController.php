@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Producto;
 use App\Models\Recurso;
 use App\Models\TipoProducto;
+use App\Models\Destacado;
 use Illuminate\Support\Facades\DB;
 
 class administracionController extends Controller
@@ -53,17 +54,27 @@ class administracionController extends Controller
     
         public function homePageAdministracion()
     {   
+        $promociones = DB::table('promocion_home')  
+            ->where('promocion_home.prh_eliminado','=', PromocionHome::eliminado_false)
+            ->paginate(10);
         
+        $producto = new Producto();
+        
+        
+        $destacados = DB::table('destacados')  
+            ->where('destacados.des_eliminado','=', Destacado::eliminado_false)
+            ->paginate(10);
          
-       //  dd($Categorias);
+         //dd($promocion);
          
         //SELECT * FROM producto inner join recurso on producto.pro_id = recurso.pro_id 
         //inner join tipo_producto on tipo_producto.tpr_id = producto.tpr_id
          
         // $nuevosProductos = Recurso::find($pene);
         // dd($nuevosProductos);
-        
-         return view('Administracion.backend.homeAdministracion.index');  
+         return view('Administracion.backend.homeAdministracion.index', ['promociones' => $promociones,'producto' => $producto, 'destacados' => $destacados ] );  
+         
+  
     }
     
     

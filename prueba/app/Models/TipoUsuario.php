@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sun, 13 May 2018 23:22:49 +0000.
+ * Date: Wed, 16 May 2018 18:38:35 +0000.
  */
 
 namespace App\Models;
@@ -28,6 +28,13 @@ class TipoUsuario extends Eloquent
 	protected $primaryKey = 'tus_id';
 	public $timestamps = false;
 
+        
+                const estado_activo = 0;
+        const estado_inactivo = 1;
+        
+        const eliminado_false = 0;
+        const eliminado_true = 1;
+        
 	protected $casts = [
 		'usu_id' => 'int',
 		'tus_estado' => 'int',

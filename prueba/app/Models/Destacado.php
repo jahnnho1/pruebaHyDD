@@ -10,14 +10,15 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class FichaTecnica
+ * Class Destacado
  * 
- * @property int $fte_id
+ * @property int $des_id
  * @property int $pro_id
- * @property string $fte_nombre
- * @property string $fte_descripcion
- * @property int $fte_estado
- * @property bool $fte_eliminado
+ * @property string $des_descripcion_1
+ * @property string $des_descripcion_2
+ * @property string $des_descripcion_3
+ * @property int $des_estado
+ * @property bool $des_eliminado
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  * 
@@ -25,10 +26,9 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  *
  * @package App\Models
  */
-class FichaTecnica extends Eloquent
+class Destacado extends Eloquent
 {
-	protected $table = 'ficha_tecnica';
-	protected $primaryKey = 'fte_id';
+	protected $primaryKey = 'des_id';
         
         
                 const estado_activo = 0;
@@ -39,16 +39,17 @@ class FichaTecnica extends Eloquent
 
 	protected $casts = [
 		'pro_id' => 'int',
-		'fte_estado' => 'int',
-		'fte_eliminado' => 'bool'
+		'des_estado' => 'int',
+		'des_eliminado' => 'bool'
 	];
 
 	protected $fillable = [
 		'pro_id',
-		'fte_nombre',
-		'fte_descripcion',
-		'fte_estado',
-		'fte_eliminado'
+		'des_descripcion_1',
+		'des_descripcion_2',
+		'des_descripcion_3',
+		'des_estado',
+		'des_eliminado'
 	];
 
 	public function producto()

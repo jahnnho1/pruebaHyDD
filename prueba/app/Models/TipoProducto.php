@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Sun, 13 May 2018 23:22:49 +0000.
+ * Date: Wed, 16 May 2018 18:38:35 +0000.
  */
 
 namespace App\Models;
@@ -29,13 +29,14 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  */
 class TipoProducto extends Eloquent
 {
-        const estado_activo = 0;
-        const estado_inactivo = 1;
-        const eliminado_true = 1;
-        const eliminado_false = 0; 
-        
 	protected $table = 'tipo_producto';
 	protected $primaryKey = 'tpr_id';
+        
+                const estado_activo = 0;
+        const estado_inactivo = 1;
+        
+        const eliminado_false = 0;
+        const eliminado_true = 1;
 
 	protected $casts = [
 		'tpr_estado' => 'int',
@@ -60,8 +61,4 @@ class TipoProducto extends Eloquent
 	{
 		return $this->hasMany(\App\Models\Recurso::class, 'tpr_id');
 	}
-        
-        
-        
-        
 }

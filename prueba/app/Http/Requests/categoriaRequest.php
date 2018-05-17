@@ -23,7 +23,7 @@ class categoriaRequest extends FormRequest
     {
         return [
             'categoriaNombre' => ['required','max:30'],
-            'categoriaDescripcion' => ['required','max:160'],
+            'categoriaDescripcion' => ['required','max:500'],
         ];
     }
     

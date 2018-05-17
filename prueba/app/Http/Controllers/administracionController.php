@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Producto;
 use App\Models\Recurso;
 use App\Models\TipoProducto;
+use App\Models\PromocionHome;
 use App\Models\Destacado;
 use Illuminate\Support\Facades\DB;
 

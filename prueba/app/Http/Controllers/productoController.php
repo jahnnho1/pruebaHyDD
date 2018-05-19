@@ -12,7 +12,9 @@ use App\Models\TipoProducto;
 
 class productoController extends Controller
 {
-    //
+    
+
+    
     public function vistaProducto($id)
     {
         $viewProducto = Producto::find($id);
@@ -63,6 +65,29 @@ class productoController extends Controller
                  
         return view('cliente.accesorios', ['productos' => $productos, 'Recurso' => $Recurso, 'categorias' => $categorias] );         
     }  
+
+
+    public function productoBusqueda(Request $request){
+
+      $query = $request->input('productoBusqueda');
+
+      $categorias = DB::table('tipo_producto')
+          ->where('tipo_producto.tpr_estado','=', TipoProducto::estado_activo)
+          ->where('tipo_producto.tpr_eliminado','=', TipoProducto::eliminado_false)                 
+          ->get();
+
+      
+      
+      $Recurso = new Recurso();
+
+
+      $productos = Producto::search($query)->get();
+      //$productos->load('recurso','pro_id');
+      //dd($productos);
+ 
+      return view('cliente.busqueda', ['productos' => $productos, 'Recurso' => $Recurso, 'categorias' => $categorias] );    
+
+    }
     
     
     

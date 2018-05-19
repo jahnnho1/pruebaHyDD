@@ -98,11 +98,11 @@
   
   <script src="{{ asset('assets/js/hs.core.js')}}"></script>
   <script src="{{ asset('assets/js/components/hs.header.js')}}"></script>
-  <script src="{{ asset('assets/js/helpers/hs.hamburgers.js')}}"></script>
-  
+  <script src="{{ asset('assets/js/helpers/hs.hamburgers.js')}}"></script>  
   <script src="{{ asset('assets/js/components/hs.scrollbar.js')}}"></script>
+
   <script src="{{ asset('assets/js/components/hs.dropdown.js')}}"></script>
-  
+  <script src="{{ asset('assets/js/components/hs.popup.js')}}"></script>
   <script src="{{ asset('assets/js/components/hs.carousel.js')}}"></script>
   
   <script src="{{ asset('assets/js/components/hs.go-to.js')}}"></script>
@@ -110,6 +110,7 @@
   <script  src="{{ asset('assets/js/components/hs.tabs.js')}}"></script>
   <script  src="{{ asset('assets/js/components/hs.rating.js')}}"></script>
   <script  src="{{ asset('assets/js/components/hs.count-qty.js')}}"></script>
+
   
    <!-- JS Implementing intro del login -->
    
@@ -153,6 +154,31 @@
       // initialization of qty
       $.HSCore.components.HSCountQty.init('.js-quantity');      
 
+
+ 
+
+            // initialization of masonry
+      $('.masonry-grid').imagesLoaded().then(function () {
+        $('.masonry-grid').masonry({
+          columnWidth: '.masonry-grid-sizer',
+          itemSelector: '.masonry-grid-item',
+          percentPosition: true
+        });
+      });
+
+
+      // initialization of popups
+      $.HSCore.components.HSPopup.init('.js-fancybox');
+
+      // initialization of HSDropdown component
+      $.HSCore.components.HSDropdown.init( $('[data-dropdown-target]'), {
+        afterOpen: function(){
+          $(this).find('input[type="search"]').focus();
+        }
+      });
+
+
+
     });
 
 
@@ -170,7 +196,7 @@
       });
       
       
-      $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'));
+
 
       // initialization of HSScrollBar component
       $.HSCore.components.HSScrollBar.init( $('.js-scrollbar') );
@@ -196,8 +222,7 @@
     
     
     
-    
-    
+
     
       
       // initialization of go to

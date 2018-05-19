@@ -11,7 +11,9 @@
                             <p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
                         </div>
                     </div>
-                    <form class="form-horizontal form-bordered" data-parsley-validate="true" name="demo-form" novalidate="" method="POST" action="{{ path('backend_usuarioAdministrativo_eliminar')}}">  
+<form class="form-horizontal form-bordered" data-parsley-validate="true" 
+name="demo-form" novalidate="" method="POST" action="{{url('/Administracion/eliminarProductoAdm')}}"> 
+      {{ csrf_field() }} 
                            <input type="text" class="hidden" id="matid" name="mpId">   
                           <div class="modal-footer">
                               <a href="javascript:;" class="btn btn-sm btn-white" data-dismiss="modal">Cerrar</a>

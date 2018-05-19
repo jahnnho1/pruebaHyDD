@@ -19,8 +19,8 @@
 					<div class="widget widget-stats bg-green">
 						<div class="stats-icon"><i class="fa fa-desktop"></i></div>
 						<div class="stats-info">
-							<h4>Crear Publicacion</h4>
-                                                        <p>5<small> Productos Agregados </small></p>	
+							<h4>Crear Categoria</h4>
+                                                        <p>{{$totalCategoria}}<small> Categorias Creadas </small></p>	
 						</div>
 						<div class="stats-link">
 							<a href="{{url('/Administracion/agregarCategoriaAdm')}}">Agregar <i class="fa fa-arrow-circle-o-right"></i></a>
@@ -43,13 +43,13 @@
                             <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                             <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                         </div>
-                        <h4 class="panel-title">Laboratorios Publicados </h4>
+                        <h4 class="panel-title">Categorias creadas </h4>
                     </div>
                     <div class="alert alert-warning fade in">
                         <button type="button" class="close" data-dismiss="alert">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        Se han creado un total de <strong>(5)</strong> Publicaciones sobre Especialidades
+                        Se han creado un total de <strong>{{$totalCategoria}}</strong> Categorias
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
@@ -60,7 +60,7 @@
                                         <th>Nombre</th>
                                         <th>Descripcion</th>
                                         <th>Estado</th>
-                                        <th>Fecha Creaciòn</th>                                     
+                                                                       
                                         <th>Acciones</th>
                                     </tr>
                                 </thead>
@@ -81,19 +81,18 @@
                                             
                                             
                                             
-                                            <td>{{$Categoria->created_at }}</td>                                                                                  
+                                                                                                                    
                                             <td>
-                                                <a class="btn btn-icon btn-sm" title="Modificar MP"  href="">                                    
+                                                <a class="btn btn-icon btn-sm" title="Modificar MP"  href="{{url('/Administracion/modificarCategoriaAdm')}}/{{$Categoria->tpr_id }}">                                    
                                                     <i class="fa fa-lg fa-edit"> </i>
                                                 </a>  
                                                     
                                                 <a href="#modal-estado" class="btn btn-icon btn-sm" data-toggle="modal" 
-                                                   data-matid="">
+                                                   data-matid="{{$Categoria->tpr_id }}">
                                                     <i class="fa fa-lg fa-power-off"></i>
-                                                </a>    
-                                                    
-                                                <a href="#modal-eliminar" class="btn btn-icon btn-sm" data-toggle="modal" 
-                                                   data-matid="">
+                                                </a>     
+                                                 <a href="#modal-eliminar" class="btn btn-icon btn-sm" data-toggle="modal" 
+                                                   data-matid="{{$Categoria->tpr_id }}">
                                                     <i class="fa fa-lg fa-trash-o"></i>
                                                 </a> 
                                             </td>    
@@ -132,5 +131,35 @@
 
 
 
+
+            @include('Administracion.backend.Categoria.modalEliminar')
+       @include('Administracion.backend.Categoria.modalEstado')
+
  @endsection
+
+
+
+
     
+     @section('jsJava')
+
+
+        <script> 
+            $(document).ready(function (e) {
+              $('#modal-estado').on('show.bs.modal', function(e) {    
+                 var matid = $(e.relatedTarget).data().matid;
+                  $(e.currentTarget).find('#matid').val(matid);        
+              });
+            });
+
+            $(document).ready(function (e) {
+              $('#modal-eliminar').on('show.bs.modal', function(e) {    
+                 var matid = $(e.relatedTarget).data().matid;
+                  $(e.currentTarget).find('#matid').val(matid);        
+              });
+            });    
+        
+        
+        </script>  
+
+     @endsection

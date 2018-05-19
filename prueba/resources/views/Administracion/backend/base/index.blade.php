@@ -108,6 +108,9 @@
         <script src="{{ asset('backend/js/form-multiple-upload.demo.min.js')}}"></script>
         
         
+
+                @yield('jsJava')
+
             <script>
                 $(document).ready(function () {
                     App.init();

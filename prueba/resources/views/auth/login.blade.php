@@ -20,6 +20,7 @@
             <div class="g-bg-white rounded g-pa-50">
               <header class="text-center mb-4">
                 <h2 class="h2 g-color-black g-font-weight-600">Ingresar</h2>
+                    <br> 
               </header>
 
               <!-- Form -->
@@ -58,7 +59,7 @@
 
                     <button type="submit" class="btn btn-block u-btn-primary rounded g-py-13">
                                     {{ __('Ingresar') }}
-                                </button>
+                                </button>     <br>     
     <a class="btn btn-link" href="{{ route('password.request') }}">
                                     {{ __('Olvidaste tu contraseña?') }}
                                 </a>
@@ -66,13 +67,13 @@
               
                 </div>
 
-                <div class="d-flex justify-content-center text-center g-mb-30">
+                <div class="d-flex justify-content-center text-center g-mb-30 invisible">
                   <div class="d-inline-block align-self-center g-width-50 g-height-1 g-bg-gray-light-v1"></div>
                   <span class="align-self-center g-color-gray-dark-v5 mx-4">O</span>
                   <div class="d-inline-block align-self-center g-width-50 g-height-1 g-bg-gray-light-v1"></div>
                 </div>
 
-                <div class="row no-gutters g-mb-40">
+                <div class="row no-gutters g-mb-40 invisible">
                   <div class="col-6">
                     <button class="btn btn-block u-btn-facebook rounded g-px-30 g-py-13 mr-1" type="button">Facebook</button>
                   </div>

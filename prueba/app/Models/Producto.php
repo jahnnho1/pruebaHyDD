@@ -8,6 +8,7 @@
 namespace App\Models;
 
 use Reliese\Database\Eloquent\Model as Eloquent;
+use Laravel\Scout\Searchable;
 
 /**
  * Class Producto
@@ -38,15 +39,27 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  */
 class Producto extends Eloquent
 {
+
+
+	use Searchable;
+
 	protected $table = 'producto';
 	protected $primaryKey = 'pro_id';
         
         
-                const estado_activo = 0;
+        const estado_activo = 0;
         const estado_inactivo = 1;
         
         const eliminado_false = 0;
         const eliminado_true = 1;
+
+
+    protected $guarded = [];
+
+    public function recurso()
+    {
+    	return $this->belongsTo(Recurso::class);
+    }   
 
 	protected $casts = [
 		'tpr_id' => 'int',
@@ -103,11 +116,21 @@ class Producto extends Eloquent
 		return $this->hasMany(\App\Models\Recurso::class, 'pro_id');
 	}
         
-        public function nombreProducto($id){
-            $producto = new Producto();
-            $producto = Producto::find($id);
-            
-            return $producto->pro_nombre;
-        }
+    public function nombreProducto($id){
+        $producto = new Producto();
+        $producto = Producto::find($id);
+        
+        return $producto->pro_nombre;
+    }
+
+
+    public function toSearchableArray()
+    {
+    	$this->load('Recurso');
+
+    	return $this->toArray();
+
+    }
+
         
 }

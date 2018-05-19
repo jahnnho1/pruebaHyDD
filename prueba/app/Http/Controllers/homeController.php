@@ -38,31 +38,6 @@ class homeController extends Controller
                 ->where('tipo_producto.tpr_estado','=', TipoProducto::estado_activo)
                 ->where('tipo_producto.tpr_eliminado','=', TipoProducto::eliminado_false)                 
                 ->get();
-         
-
-         
-          $promocion_home1 = DB::table('promocion_home')
-                 ->join('producto','producto.pro_id','=','promocion_home.prh_prod_id_1')
-                 ->join('recurso','recurso.pro_id','=','producto.pro_id')   
-                 ->where('promocion_home.prh_estado','=', PromocionHome::estado_activo)
-                 ->where('promocion_home.prh_eliminado','=', PromocionHome::eliminado_false)
-                 ->take(1)->get();     
-          $promocion_home2 = DB::table('promocion_home')
-                 ->join('producto','producto.pro_id','=','promocion_home.prh_prod_id_2')
-                 ->join('recurso','recurso.pro_id','=','producto.pro_id')  
-                  ->where('promocion_home.prh_estado','=', PromocionHome::estado_activo)
-                 ->where('promocion_home.prh_eliminado','=', PromocionHome::eliminado_false)
-                 ->take(1)->get();
-                
-          
-          $promocion_home3 = DB::table('promocion_home')
-                 ->join('producto','producto.pro_id','=','promocion_home.prh_prod_id_3')
-                 ->join('recurso','recurso.pro_id','=','producto.pro_id')   
-                  ->where('promocion_home.prh_estado','=', PromocionHome::estado_activo)
-                 ->where('promocion_home.prh_eliminado','=', PromocionHome::eliminado_false)
-                 ->take(1)->get();
-          
-         // dd($promocion_home2);
           
            $destacados = DB::table('destacados')
                  ->join('producto','producto.pro_id','=','destacados.pro_id')
@@ -71,7 +46,6 @@ class homeController extends Controller
                  ->where('destacados.des_eliminado','=', TipoProducto::eliminado_false) 
                  ->where('recurso.rec_es_principal','=', Recurso::es_principal)                
                  ->get();
-
 
 
           
@@ -89,7 +63,7 @@ class homeController extends Controller
         // dd($nuevosProductos);
         
          return view('welcome', ['nuevosProductos' => $nuevosProductos,'Recurso' => $Recurso, 'categorias' =>  $categorias,
-             'promocion_home1' => $promocion_home1,'promocion_home2' => $promocion_home2,'promocion_home3' => $promocion_home3,
+        
              'destacados' => $destacados,
              ] );        
         $this->middleware('auth');

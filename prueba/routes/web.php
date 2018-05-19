@@ -17,6 +17,8 @@ Route::get('/ingresoCliente', 'ingresoClienteController@homeIngreso');
 Route::get('/Empresa', 'homeController@homeEmpresa');
 Route::get('/Servicios', 'homeController@homeServicio');
 Route::get('/Categorias', 'homeController@homeCategorias');
+Route::get('/productoBusqueda', 'productoController@productoBusqueda');
+
 
 
 /* * 
@@ -46,12 +48,23 @@ Route::get('/Administracion/homePageAdministrativa', 'administracionController@h
 Route::get('/Administracion/agregarProductoAdm', 'productoAdministracionController@agregarProducto')->middleware('auth');
 Route::post('/Administracion/EjecutarAgregarProductoAdm', 'productoAdministracionController@EjecutarAgregarProducto')->middleware('auth');
 
+Route::get('/Administracion/modificarProductoAdm/{id}', 'productoAdministracionController@modificarProducto')->middleware('auth');
+Route::post('/Administracion/EjecutarModificarProductoAdm', 'productoAdministracionController@EjecutarModificarProducto')->middleware('auth');
+Route::post('/Administracion/estadoProductoAdm', 'productoAdministracionController@EjecutarEstadoProducto')->middleware('auth');
+Route::post('/Administracion/eliminarProductoAdm', 'productoAdministracionController@EjecutarEliminarProducto')->middleware('auth');
+
 
 /*
  * Admin Categoria
  */
 Route::get('/Administracion/agregarCategoriaAdm', 'categoriaAdministracionController@agregarCategoria')->middleware('auth');
 Route::post('/Administracion/EjecutarAgregarCategoriaAdm', 'categoriaAdministracionController@EjecutarAgregarCategoria')->middleware('auth');
+
+
+Route::get('/Administracion/modificarCategoriaAdm/{id}', 'categoriaAdministracionController@modificarCategoria')->middleware('auth');
+Route::post('/Administracion/EjecutarModificarCategoriaAdm', 'categoriaAdministracionController@EjecutarModificarCategoria')->middleware('auth');
+Route::post('/Administracion/estadoCategoriaAdm', 'categoriaAdministracionController@EjecutarEstadoCategoria')->middleware('auth');
+Route::post('/Administracion/eliminarCategoriaAdm', 'categoriaAdministracionController@EjecutarEliminarCategoria')->middleware('auth');
 
 
 /*
@@ -66,6 +79,12 @@ Route::post('/Administracion/EjecutarAgregarPromocionAdm', 'homepageAdministraci
 
 Route::get('/Administracion/agregarDestacadoAdm', 'homepageAdministracionController@agregarDestacado')->middleware('auth');;
 Route::post('/Administracion/EjecutarAgregarDestacadoAdm', 'homepageAdministracionController@EjecutarAgregarDestacado')->middleware('auth');;
+
+
+Route::get('/Administracion/modificarDestacadoAdm/{id}', 'homepageAdministracionController@modificarDestacado')->middleware('auth');
+Route::post('/Administracion/EjecutarModificarDestacadoAdm', 'homepageAdministracionController@EjecutarModificarDestacado')->middleware('auth');
+Route::post('/Administracion/estadoDestacadoAdm', 'homepageAdministracionController@EjecutarEstadoDestacado')->middleware('auth');
+Route::post('/Administracion/eliminarDestacadoAdm', 'homepageAdministracionController@EjecutarEliminarDestacado')->middleware('auth');
 
 
 
@@ -89,3 +108,10 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+
+
+// Facebook
+
+Route::get('/auth/facebook', 'SocialAuthController@facebook');
+Route::get('/auth/facebook/callback', 'SocialAuthController@callback');
+Route::post('/auth/facebook/register', 'SocialAuthController@register');

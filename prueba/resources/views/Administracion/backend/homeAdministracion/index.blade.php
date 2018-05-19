@@ -12,15 +12,15 @@
     </ol>
     <!-- end breadcrumb -->
     <!-- begin page-header -->
-    <h1 class="page-header">Panel administrativo de Categorías <small> </small></h1>
+    <h1 class="page-header">Panel administrativo de la Pagina de inicio de H&D <small> </small></h1>
                     <div class="row">
 				<!-- begin col-3 -->
-				<div class="col-md-16 col-sm-6">
+				<div class="col-md-16 col-sm-6 hidden">
 					<div class="widget widget-stats bg-green">
 						<div class="stats-icon"><i class="fa fa-desktop"></i></div>
 						<div class="stats-info">
 							<h4>Crear Promoción</h4>
-                                                        <p>5<small> Promociones Agregados </small></p>	
+                                                        <p>{{$totalDestacados}}<small> Promociones Agregados </small></p>	
 						</div>
 						<div class="stats-link">
 							<a href="{{url('/Administracion/agregarPromocionAdm')}}">Agregar <i class="fa fa-arrow-circle-o-right"></i></a>
@@ -28,12 +28,12 @@
 					</div>
 				</div>
                                 
-                                				<div class="col-md-16 col-sm-6">
+                <div class="col-md-16 col-sm-12">
 					<div class="widget widget-stats bg-green">
 						<div class="stats-icon"><i class="fa fa-desktop"></i></div>
 						<div class="stats-info">
 							<h4>Agregar productos destacados</h4>
-                                                        <p>5<small> Productos destacados Agregados </small></p>	
+                                                        <p>{{$totalDestacados}}<small> Productos destacados Agregados </small></p>	
 						</div>
 						<div class="stats-link">
 							<a href="{{url('/Administracion/agregarDestacadoAdm')}}">Agregar <i class="fa fa-arrow-circle-o-right"></i></a>
@@ -44,7 +44,7 @@
 						
                     </div>
 
-        <div class="row">
+        <div class="row hidden">
 
             <div class="col-md-12">
                 <!-- begin panel -->
@@ -154,7 +154,7 @@
                         <button type="button" class="close" data-dismiss="alert">
                             <span aria-hidden="true">&times;</span>
                         </button>
-                        Se han creado un total de <strong>(5)</strong> Productos destacados
+                        Se han creado un total de <strong>({{$totalDestacados}})</strong> Productos destacados
                     </div>
                     <div class="panel-body">
                         <div class="table-responsive">
@@ -187,17 +187,17 @@
                                             <td>{{$pro->created_at }}</td>
                                              <td>{{$pro->updated_at }}</td>
                                             <td>
-                                                <a class="btn btn-icon btn-sm" title="Modificar MP"  href="">                                    
+                                                <a class="btn btn-icon btn-sm" title="Modificar MP"  href="{{url('/Administracion/modificarDestacadoAdm')}}/{{$pro->des_id }}">                                    
                                                     <i class="fa fa-lg fa-edit"> </i>
                                                 </a>  
                                                     
                                                 <a href="#modal-estado" class="btn btn-icon btn-sm" data-toggle="modal" 
-                                                   data-matid="">
+                                                   data-matid="{{$pro->des_id }}">
                                                     <i class="fa fa-lg fa-power-off"></i>
                                                 </a>    
                                                     
                                                 <a href="#modal-eliminar" class="btn btn-icon btn-sm" data-toggle="modal" 
-                                                   data-matid="">
+                                                   data-matid="{{$pro->des_id }}">
                                                     <i class="fa fa-lg fa-trash-o"></i>
                                                 </a> 
                                             </td>    
@@ -223,5 +223,34 @@
 
 
 
+            @include('Administracion.backend.homeAdministracion.modalEliminar')
+       @include('Administracion.backend.homeAdministracion.modalEstado')
+
  @endsection
+
+
+
+
     
+     @section('jsJava')
+
+
+        <script> 
+            $(document).ready(function (e) {
+              $('#modal-estado').on('show.bs.modal', function(e) {    
+                 var matid = $(e.relatedTarget).data().matid;
+                  $(e.currentTarget).find('#matid').val(matid);        
+              });
+            });
+
+            $(document).ready(function (e) {
+              $('#modal-eliminar').on('show.bs.modal', function(e) {    
+                 var matid = $(e.relatedTarget).data().matid;
+                  $(e.currentTarget).find('#matid').val(matid);        
+              });
+            });    
+        
+        
+        </script>  
+
+     @endsection

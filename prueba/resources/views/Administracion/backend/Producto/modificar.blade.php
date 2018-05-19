@@ -15,12 +15,15 @@
     </ol>
     <!-- end breadcrumb -->
     <!-- begin page-header -->
-    <h1 class="page-header">Agregar Categoria <small> </small></h1>
+    <h1 class="page-header">Modificar producto <small> </small></h1>
 
 
 
 
-   <form id="fileupload" action="{{url('/Administracion/EjecutarAgregarCategoriaAdm')}} " method="POST" enctype="multipart/form-data">
+   <form id="fileupload" action="{{url('/Administracion/EjecutarModificarProductoAdm')}} " method="POST" enctype="multipart/form-data">
+        
+
+     
         {{ csrf_field() }}
 
 
@@ -34,7 +37,7 @@
                         <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                         <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                     </div>
-                    <h4 class="panel-title">Agregar Categoria</h4>
+                    <h4 class="panel-title">Modificar producto</h4>
                 </div>
                 <div class="panel-body">
         
@@ -43,31 +46,25 @@
      
                     
                     <h4 class="m-t-0">Nombre</h4>
-                    <input class="form-control" type="text" placeholder="Titulo" name="categoriaNombre">
-                    
-                     <h4 class="m-t-0">Descripción</h4>                   
-                    <input class="form-control" type="text" placeholder="Titulo" name="categoriaDescripcion">
-                    <h4 class="m-t-0">Caracteristica 1</h4>
-                    <textarea class="form-control" rows="2" id="comment" name="categoriaCaract1" maxlength="160" placeholder="Un maximo de 160 Caracteres"></textarea>
+                    <input class="form-control" type="text"  name="productoNombre" value="{{$producto->pro_nombre}}">
                     
                     
-                    <h4 class="m-t-0">Caracteristica 2</h4>
-                    <textarea class="form-control" rows="2" id="comment" name="categoriaCaract2" maxlength="160"  placeholder="Un maximo de 160 Caracteres"></textarea>
-
-
+                    <h4 class="m-t-0">Codigo Serial</h4>
+                    <input class="form-control" type="text"  name="productoCodigo" value="{{$producto->pro_codigo_serial}}">
+                    
+                      <h4 class="m-t-0">Descripción</h4>
+               <textarea class="form-control" rows="2" id="comment" name="productoDescripcion" maxlength="1000" >{{$producto->pro_descripcion}}</textarea>          <h4 class="m-t-0">Categoria</h4>
+                    
+                     <select class="form-control input-sm" name="productoCategoria">                         
+                          @foreach($Categorias as $Categoria)
+                                <option value="{{$Categoria->tpr_id }}"  class="@if($producto->tpr_id == $Categoria->tpr_id) active @endif">{{$Categoria->tpr_nombre }}</option>
+                          @endforeach
+                    </select>
                     
                     
          
-                    <h4 class="m-t-0">Imagen principal de la categoria</h4>
-                    <div class="fileupload-buttonbar pull-left">
-                            <div class="col-md-12">
-                                <span class="btn btn-success fileinput-button">
-                                    <i class="fa fa-plus"></i>
-                                    <span>Agregar Imagen...</span>
-                                    <input type="file" name="productoImagen[]" multiple>
-                                </span>
-                            </div>
-                    </div>
+                    <input type="text" class="invisible" name="productoId" value="{{$producto->pro_id}}">
+
                 
                         <!-- The table listing the files available for upload/download -->
          

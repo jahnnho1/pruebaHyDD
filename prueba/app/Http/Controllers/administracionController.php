@@ -103,6 +103,18 @@ class administracionController extends Controller
     
     
     
-    
+        
+    public function homeUsuario()
+    {   
+         $usuarios = DB::table('users')                 
+                 ->where('users.usu_eliminado','=',TipoProducto::eliminado_false)               
+                 ->paginate(10);
+         
+         $totalUsuarios = DB::table('users')                 
+             ->where('users.usu_eliminado','=',TipoProducto::eliminado_false)        
+             ->count();
+        
+         return view('Administracion.backend.usuario.index', ['usuarios' => $usuarios,'totalUsuarios' => $totalUsuarios] );  
+    }
     
 }

@@ -2,20 +2,19 @@
 
 /**
  * Created by Reliese Model.
- * Date: Wed, 16 May 2018 18:38:35 +0000.
+ * Date: Sat, 19 May 2018 23:16:05 +0000.
  */
 
 namespace App\Models;
 
 use Reliese\Database\Eloquent\Model as Eloquent;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-
 
 /**
  * Class User
  * 
  * @property int $id
+ * @property int $tus_id
  * @property string $usu_nombre
  * @property string $usu_apellido
  * @property string $name
@@ -27,33 +26,14 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  * 
+ * @property \App\Models\TipoUsuario $tipo_usuario
+ * @property \Illuminate\Database\Eloquent\Collection $orders
  * @property \Illuminate\Database\Eloquent\Collection $recursos
- * @property \Illuminate\Database\Eloquent\Collection $tipo_usuarios
  *
  * @package App\Models
  */
 class User extends Authenticatable
 {
-
-
-	use Notifiable;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array
-     */
-
-
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
-    protected $hidden = [
-        'password', 'remember_token',
-    ];
-
 
 
 	protected $primaryKey = 'id';
@@ -65,14 +45,23 @@ class User extends Authenticatable
         const eliminado_false = 0;
         const eliminado_true = 1;
 
+
+        const tipo_admin = 2;
+        const tipo_usuario = 1;
+
 	protected $casts = [
+		'tus_id' => 'int',
 		'usu_estado' => 'int',
 		'usu_eliminado' => 'bool'
 	];
 
-
+	protected $hidden = [
+		'password',
+		'remember_token'
+	];
 
 	protected $fillable = [
+		'tus_id',
 		'usu_nombre',
 		'usu_apellido',
 		'name',
@@ -83,13 +72,37 @@ class User extends Authenticatable
 		'usu_eliminado'
 	];
 
-	public function recursos()
+	public function tipo_usuario()
 	{
-		return $this->hasMany(\App\Models\Recurso::class, 'usu_id');
+		return $this->belongsTo(\App\Models\TipoUsuario::class, 'tus_id');
 	}
 
-	public function tipo_usuarios()
+	public function orders()
 	{
-		return $this->hasMany(\App\Models\TipoUsuario::class, 'usu_id');
+		return $this->hasMany(\App\Models\Order::class, 'id');
 	}
+
+	public function recursos()
+	{
+		return $this->hasMany(\App\Models\Recurso::class, 'id');
+	}
+
+	public function TypeUser(){
+
+		return $this->tus_id === User::tipo_admin;
+	}
+
+
+    /**
+     * Send the password reset notification.
+     *
+     * @param  string  $token
+     * @return void
+     */
+    public function sendPasswordResetNotification($token)
+    {
+        $this->notify(new ResetPasswordNotification($token));
+    }
+
+	
 }

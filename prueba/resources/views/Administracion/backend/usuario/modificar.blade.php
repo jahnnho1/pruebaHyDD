@@ -15,12 +15,12 @@
     </ol>
     <!-- end breadcrumb -->
     <!-- begin page-header -->
-    <h1 class="page-header">Modificar producto <small> </small></h1>
+    <h1 class="page-header">Modificar Usuario <small> </small></h1>
 
 
 
 
-   <form id="fileupload" action="{{url('/Administracion/EjecutarModificarProductoAdm')}} " method="POST" enctype="multipart/form-data">
+   <form id="fileupload" action="{{url('/Administracion/EjecutarModificarUsuarioAdm')}} " method="POST" enctype="multipart/form-data">
         
 
      
@@ -37,7 +37,7 @@
                         <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
                         <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
                     </div>
-                    <h4 class="panel-title">Modificar producto</h4>
+                    <h4 class="panel-title">Modificar Usuario</h4>
                 </div>
                 <div class="panel-body">
         
@@ -46,24 +46,28 @@
      
                     
                     <h4 class="m-t-0">Nombre</h4>
-                    <input class="form-control" type="text"  name="productoNombre" value="{{$producto->pro_nombre}}">
+                    <input class="form-control" type="text"  name="usuarioNombre" value="{{$usuario->name}}">
                     
                     
-                    <h4 class="m-t-0">Codigo Serial</h4>
-                    <input class="form-control" type="text"  name="productoCodigo" value="{{$producto->pro_codigo_serial}}">
+                    <h4 class="m-t-0">Apellido</h4>
+                    <input class="form-control" type="text"  name="usuarioApellido" value="{{$usuario->usu_apellido}}">
+
+
+                    <h4 class="m-t-0">Email</h4>
+                    <input class="form-control" type="text"  name="usuarioEmail" value="{{$usuario->email}}">
                     
-                      <h4 class="m-t-0">Descripción</h4>
-               <textarea class="form-control" rows="2" id="comment" name="productoDescripcion" maxlength="1000" >{{$producto->pro_descripcion}}</textarea>          <h4 class="m-t-0">Categoria</h4>
-                    
-                     <select class="form-control input-sm" name="productoCategoria">                         
-                          @foreach($Categorias as $Categoria)
-                                <option value="{{$Categoria->tpr_id }}"  class="@if($producto->tpr_id == $Categoria->tpr_id) active @endif">{{$Categoria->tpr_nombre }}</option>
+                    <h4 class="m-t-0">Tipo de Usuario</h4>
+                     <select class="form-control input-sm" name="usuarioTipoUsuario">                         
+                          @foreach($TipoUsuario as $TipoUsuarios)
+
+
+                                <option value="{{$TipoUsuarios->tus_id }}"  class="@if($TipoUsuarios->tus_id == 2)  selected @endif">{{$TipoUsuarios->tus_nombre }}</option>
                           @endforeach
                     </select>
                     
                     
          
-                    <input type="text" class="invisible" name="productoId" value="{{$producto->pro_id}}">
+                    <input type="text" class="invisible" name="usuarioId" value="{{$usuario->id}}">
 
                 
                         <!-- The table listing the files available for upload/download -->
@@ -82,7 +86,7 @@
 
                 </div>
                 <div class="panel-footer">
-                    <input id="btAgregar" type="submit" class="btn btn-success" value="Publicar entrada">                
+                    <input id="btAgregar" type="submit" class="btn btn-success" value="Modificar">                
                 </div>
             </div>                               
         </div>

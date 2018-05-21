@@ -8,13 +8,13 @@
                     <a href="javascript:;">
 
 
-                       <img class="img-responsive" src="" alt=""> </a> 
+                       <img class="img-responsive" src="{{ Auth::user()->imgUser() }}" alt=""> </a> 
 
 
                 </div>
                 <div class="info">
-                     NombreUsuario
-                    <small>CorreoUsuario</small>
+                      {{ Auth::user()->name }} 
+                    <small> {{ Auth::user()->email }}</small>
                 </div>
             </li>
         </ul>
@@ -43,9 +43,9 @@
                     <span>Panel de Administracion</span>
                 </a>
                 <ul class="sub-menu">
-                        <li class="" >     <a  href="{{url('/Administracion/categoriaAdministrativa')}} " data-id=>  <i class=" fa fa-bank "> Categorias </i></a></li> 
+                        <li class="" >     <a  href="{{url('/Administracion/categoriaAdministrativa')}} " data-id=>  <i class=" fa fa-bank "> Categorias </i></a></li>
                         <li class="" >     <a  href="{{url('/Administracion/productoAdministrativa')}} " data-id=>  <i class=" fa fa-bank "> Productos </i></a></li>  
-                        <li class="" >     <a  href="{{url('/')}} " data-id=>  <i class=" fa fa-bank "> Usuarios </i></a></li>  
+                        <li class="" >     <a  href="{{url('/Administracion/usuarioAdministrativa')}} " data-id=>  <i class=" fa fa-bank "> Usuarios </i></a></li>  
                         <li class="" >     <a  href="{{url('/Administracion/homePageAdministrativa')}} " data-id=>  <i class=" fa fa-bank "> HomePage </i></a></li>  
                             
                 </ul>

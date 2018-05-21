@@ -11,6 +11,12 @@
 |
 */
 
+Route::bind('product', function($proId){
+	return App\Models\Producto::where('producto.pro_id',$proId)->first();
+
+});
+
+
 Route::get('/', 'homeController@home');
 Route::get('/producto/{id}', 'productoController@vistaProducto');
 Route::get('/ingresoCliente', 'ingresoClienteController@homeIngreso');
@@ -18,6 +24,14 @@ Route::get('/Empresa', 'homeController@homeEmpresa');
 Route::get('/Servicios', 'homeController@homeServicio');
 Route::get('/Categorias', 'homeController@homeCategorias');
 Route::get('/productoBusqueda', 'productoController@productoBusqueda');
+
+
+/**
+	Cart
+*/
+
+Route::Get('cart/show',['as' => 'cart-show','uses' => 'CartController@show']);
+Route::Get('cart/add/{id}',['as' => 'cart-add','uses' => 'CartController@add']);
 
 
 
@@ -37,34 +51,37 @@ Route::get('/Categorias/{id}', 'productoController@categoria');
  * /
  */
 
-Route::get('/Administracion/areaAdministrativa', 'administracionController@homeAdministracion')->middleware('auth');
-Route::get('/Administracion/productoAdministrativa', 'administracionController@homeProducto')->middleware('auth');
-Route::get('/Administracion/categoriaAdministrativa', 'administracionController@homeCategoria')->middleware('auth');
-Route::get('/Administracion/homePageAdministrativa', 'administracionController@homePageAdministracion')->middleware('auth');
+
+
+Route::get('/Administracion/areaAdministrativa', 'administracionController@homeAdministracion')->middleware(['auth','admin']);
+Route::get('/Administracion/productoAdministrativa', 'administracionController@homeProducto')->middleware(['auth','admin']);
+Route::get('/Administracion/categoriaAdministrativa', 'administracionController@homeCategoria')->middleware(['auth','admin']);
+Route::get('/Administracion/homePageAdministrativa', 'administracionController@homePageAdministracion')->middleware(['auth','admin']);
+Route::get('/Administracion/usuarioAdministrativa', 'administracionController@homeUsuario')->middleware(['auth','admin']);
 
 /*
  * Admin Producto
  */
-Route::get('/Administracion/agregarProductoAdm', 'productoAdministracionController@agregarProducto')->middleware('auth');
-Route::post('/Administracion/EjecutarAgregarProductoAdm', 'productoAdministracionController@EjecutarAgregarProducto')->middleware('auth');
+Route::get('/Administracion/agregarProductoAdm', 'productoAdministracionController@agregarProducto')->middleware(['auth','admin']);
+Route::post('/Administracion/EjecutarAgregarProductoAdm', 'productoAdministracionController@EjecutarAgregarProducto')->middleware(['auth','admin']);
 
-Route::get('/Administracion/modificarProductoAdm/{id}', 'productoAdministracionController@modificarProducto')->middleware('auth');
-Route::post('/Administracion/EjecutarModificarProductoAdm', 'productoAdministracionController@EjecutarModificarProducto')->middleware('auth');
-Route::post('/Administracion/estadoProductoAdm', 'productoAdministracionController@EjecutarEstadoProducto')->middleware('auth');
-Route::post('/Administracion/eliminarProductoAdm', 'productoAdministracionController@EjecutarEliminarProducto')->middleware('auth');
+Route::get('/Administracion/modificarProductoAdm/{id}', 'productoAdministracionController@modificarProducto')->middleware(['auth','admin']);
+Route::post('/Administracion/EjecutarModificarProductoAdm', 'productoAdministracionController@EjecutarModificarProducto')->middleware(['auth','admin']);
+Route::post('/Administracion/estadoProductoAdm', 'productoAdministracionController@EjecutarEstadoProducto')->middleware(['auth','admin']);
+Route::post('/Administracion/eliminarProductoAdm', 'productoAdministracionController@EjecutarEliminarProducto')->middleware(['auth','admin']);
 
 
 /*
  * Admin Categoria
  */
-Route::get('/Administracion/agregarCategoriaAdm', 'categoriaAdministracionController@agregarCategoria')->middleware('auth');
-Route::post('/Administracion/EjecutarAgregarCategoriaAdm', 'categoriaAdministracionController@EjecutarAgregarCategoria')->middleware('auth');
+Route::get('/Administracion/agregarCategoriaAdm', 'categoriaAdministracionController@agregarCategoria')->middleware(['auth','admin']);
+Route::post('/Administracion/EjecutarAgregarCategoriaAdm', 'categoriaAdministracionController@EjecutarAgregarCategoria')->middleware(['auth','admin']);
 
 
-Route::get('/Administracion/modificarCategoriaAdm/{id}', 'categoriaAdministracionController@modificarCategoria')->middleware('auth');
-Route::post('/Administracion/EjecutarModificarCategoriaAdm', 'categoriaAdministracionController@EjecutarModificarCategoria')->middleware('auth');
-Route::post('/Administracion/estadoCategoriaAdm', 'categoriaAdministracionController@EjecutarEstadoCategoria')->middleware('auth');
-Route::post('/Administracion/eliminarCategoriaAdm', 'categoriaAdministracionController@EjecutarEliminarCategoria')->middleware('auth');
+Route::get('/Administracion/modificarCategoriaAdm/{id}', 'categoriaAdministracionController@modificarCategoria')->middleware(['auth','admin']);
+Route::post('/Administracion/EjecutarModificarCategoriaAdm', 'categoriaAdministracionController@EjecutarModificarCategoria')->middleware(['auth','admin']);
+Route::post('/Administracion/estadoCategoriaAdm', 'categoriaAdministracionController@EjecutarEstadoCategoria')->middleware(['auth','admin']);
+Route::post('/Administracion/eliminarCategoriaAdm', 'categoriaAdministracionController@EjecutarEliminarCategoria')->middleware(['auth','admin']);
 
 
 /*
@@ -74,17 +91,38 @@ Route::post('/Administracion/eliminarCategoriaAdm', 'categoriaAdministracionCont
  */
 
 
-Route::get('/Administracion/agregarPromocionAdm', 'homepageAdministracionController@agregarPromocion')->middleware('auth');;
-Route::post('/Administracion/EjecutarAgregarPromocionAdm', 'homepageAdministracionController@EjecutarAgregarPromocion')->middleware('auth');;
+Route::get('/Administracion/agregarPromocionAdm', 'homepageAdministracionController@agregarPromocion')->middleware(['auth','admin']);
+Route::post('/Administracion/EjecutarAgregarPromocionAdm', 'homepageAdministracionController@EjecutarAgregarPromocion')->middleware(['auth','admin']);
 
 Route::get('/Administracion/agregarDestacadoAdm', 'homepageAdministracionController@agregarDestacado')->middleware('auth');;
-Route::post('/Administracion/EjecutarAgregarDestacadoAdm', 'homepageAdministracionController@EjecutarAgregarDestacado')->middleware('auth');;
+Route::post('/Administracion/EjecutarAgregarDestacadoAdm', 'homepageAdministracionController@EjecutarAgregarDestacado')->middleware(['auth','admin']);
 
 
-Route::get('/Administracion/modificarDestacadoAdm/{id}', 'homepageAdministracionController@modificarDestacado')->middleware('auth');
-Route::post('/Administracion/EjecutarModificarDestacadoAdm', 'homepageAdministracionController@EjecutarModificarDestacado')->middleware('auth');
-Route::post('/Administracion/estadoDestacadoAdm', 'homepageAdministracionController@EjecutarEstadoDestacado')->middleware('auth');
-Route::post('/Administracion/eliminarDestacadoAdm', 'homepageAdministracionController@EjecutarEliminarDestacado')->middleware('auth');
+Route::get('/Administracion/modificarDestacadoAdm/{id}', 'homepageAdministracionController@modificarDestacado')->middleware(['auth','admin']);
+Route::post('/Administracion/EjecutarModificarDestacadoAdm', 'homepageAdministracionController@EjecutarModificarDestacado')->middleware(['auth','admin']);
+Route::post('/Administracion/estadoDestacadoAdm', 'homepageAdministracionController@EjecutarEstadoDestacado')->middleware(['auth','admin']);
+Route::post('/Administracion/eliminarDestacadoAdm', 'homepageAdministracionController@EjecutarEliminarDestacado')->middleware(['auth','admin']);
+
+
+/*
+ * 
+ * Admin Usuario
+ * 
+ */
+
+Route::get('/Administracion/modificarUsuarioAdm/{id}', 'usuarioAdministracionController@modificar')->middleware(['auth','admin']);
+Route::post('/Administracion/EjecutarModificarUsuarioAdm', 'usuarioAdministracionController@EjecutarModificar')->middleware(['auth','admin']);
+Route::post('/Administracion/estadoUsuarioAdm', 'usuarioAdministracionController@EjecutarEstado')->middleware(['auth','admin']);
+Route::post('/Administracion/eliminarUsuarioAdm', 'usuarioAdministracionController@EjecutarEliminar')->middleware(['auth','admin']);
+
+
+
+
+
+
+
+
+
 
 
 

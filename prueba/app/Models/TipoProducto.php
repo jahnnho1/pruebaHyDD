@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Wed, 16 May 2018 18:38:35 +0000.
+ * Date: Sat, 19 May 2018 23:16:05 +0000.
  */
 
 namespace App\Models;
@@ -31,12 +31,14 @@ class TipoProducto extends Eloquent
 {
 	protected $table = 'tipo_producto';
 	protected $primaryKey = 'tpr_id';
-        
-                const estado_activo = 0;
+
+	                const estado_activo = 0;
         const estado_inactivo = 1;
         
         const eliminado_false = 0;
         const eliminado_true = 1;
+
+        
 
 	protected $casts = [
 		'tpr_estado' => 'int',

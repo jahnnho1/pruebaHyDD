@@ -10,39 +10,32 @@ namespace App\Models;
 use Reliese\Database\Eloquent\Model as Eloquent;
 
 /**
- * Class FichaTecnica
+ * Class OrderProducto
  * 
- * @property int $fte_id
+ * @property int $ord_id
  * @property int $pro_id
- * @property string $fte_nombre
- * @property string $fte_descripcion
- * @property int $fte_estado
- * @property bool $fte_eliminado
  * @property \Carbon\Carbon $created_at
  * @property \Carbon\Carbon $updated_at
  * 
+ * @property \App\Models\Order $order
  * @property \App\Models\Producto $producto
  *
  * @package App\Models
  */
-class FichaTecnica extends Eloquent
+class OrderProducto extends Eloquent
 {
-	protected $table = 'ficha_tecnica';
-	protected $primaryKey = 'fte_id';
+	protected $table = 'order_producto';
+	public $incrementing = false;
 
 	protected $casts = [
-		'pro_id' => 'int',
-		'fte_estado' => 'int',
-		'fte_eliminado' => 'bool'
+		'ord_id' => 'int',
+		'pro_id' => 'int'
 	];
 
-	protected $fillable = [
-		'pro_id',
-		'fte_nombre',
-		'fte_descripcion',
-		'fte_estado',
-		'fte_eliminado'
-	];
+	public function order()
+	{
+		return $this->belongsTo(\App\Models\Order::class, 'ord_id');
+	}
 
 	public function producto()
 	{

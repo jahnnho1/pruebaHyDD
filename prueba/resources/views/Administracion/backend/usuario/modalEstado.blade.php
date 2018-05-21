@@ -12,7 +12,7 @@
                         </div>
                     </div>
               <form class="form-horizontal form-bordered" data-parsley-validate="true" 
-              name="demo-form" novalidate="" method="POST" action="{{url('/Administracion/estadoProductoAdm')}}">  
+              name="demo-form" novalidate="" method="POST" action="{{url('/Administracion/estadoUsuarioAdm')}}">  
                     {{ csrf_field() }}
                      <input type="text" class="hidden" id="matid" name="mpId">   
                     <div class="modal-footer">

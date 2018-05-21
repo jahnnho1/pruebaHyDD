@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Wed, 16 May 2018 18:38:35 +0000.
+ * Date: Sat, 19 May 2018 23:16:05 +0000.
  */
 
 namespace App\Models;
@@ -13,7 +13,7 @@ use Reliese\Database\Eloquent\Model as Eloquent;
  * Class Recurso
  * 
  * @property int $rec_id
- * @property int $usu_id
+ * @property int $id
  * @property int $tpr_id
  * @property int $pro_id
  * @property int $rec_tipo
@@ -35,8 +35,9 @@ class Recurso extends Eloquent
 {
 	protected $table = 'recurso';
 	protected $primaryKey = 'rec_id';
-        
-               const tipo_imagen = 1;
+
+
+	               const tipo_imagen = 1;
         const tipo_video = 2;
         
         const es_principal = 1;
@@ -58,10 +59,9 @@ class Recurso extends Eloquent
             
       
         }
-        
 
 	protected $casts = [
-		'usu_id' => 'int',
+		'id' => 'int',
 		'tpr_id' => 'int',
 		'pro_id' => 'int',
 		'rec_tipo' => 'int',
@@ -72,7 +72,7 @@ class Recurso extends Eloquent
 	];
 
 	protected $fillable = [
-		'usu_id',
+		'id',
 		'tpr_id',
 		'pro_id',
 		'rec_tipo',
@@ -85,7 +85,7 @@ class Recurso extends Eloquent
 
 	public function user()
 	{
-		return $this->belongsTo(\App\Models\User::class, 'usu_id');
+		return $this->belongsTo(\App\Models\User::class, 'id');
 	}
 
 	public function producto()

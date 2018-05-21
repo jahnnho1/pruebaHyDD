@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Wed, 16 May 2018 18:38:34 +0000.
+ * Date: Sat, 19 May 2018 23:16:05 +0000.
  */
 
 namespace App\Models;
@@ -33,33 +33,24 @@ use Laravel\Scout\Searchable;
  * @property \App\Models\SubCategorium $sub_categorium
  * @property \Illuminate\Database\Eloquent\Collection $destacados
  * @property \Illuminate\Database\Eloquent\Collection $ficha_tecnicas
+ * @property \Illuminate\Database\Eloquent\Collection $orders
  * @property \Illuminate\Database\Eloquent\Collection $recursos
  *
  * @package App\Models
  */
 class Producto extends Eloquent
-{
-
-
+{	
 	use Searchable;
 
 	protected $table = 'producto';
 	protected $primaryKey = 'pro_id';
-        
-        
-        const estado_activo = 0;
+
+	    const estado_activo = 0;
         const estado_inactivo = 1;
         
         const eliminado_false = 0;
         const eliminado_true = 1;
-
-
-    protected $guarded = [];
-
-    public function recurso()
-    {
-    	return $this->belongsTo(Recurso::class);
-    }   
+        protected $guarded = [];
 
 	protected $casts = [
 		'tpr_id' => 'int',
@@ -111,11 +102,17 @@ class Producto extends Eloquent
 		return $this->hasMany(\App\Models\FichaTecnica::class, 'pro_id');
 	}
 
+	public function orders()
+	{
+		return $this->belongsToMany(\App\Models\Order::class, 'order_producto', 'pro_id', 'ord_id')
+					->withTimestamps();
+	}
+
 	public function recursos()
 	{
 		return $this->hasMany(\App\Models\Recurso::class, 'pro_id');
 	}
-        
+
     public function nombreProducto($id){
         $producto = new Producto();
         $producto = Producto::find($id);
@@ -131,6 +128,5 @@ class Producto extends Eloquent
     	return $this->toArray();
 
     }
-
-        
+	
 }

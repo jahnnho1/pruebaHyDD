@@ -2,7 +2,7 @@
 
 /**
  * Created by Reliese Model.
- * Date: Wed, 16 May 2018 18:38:35 +0000.
+ * Date: Sat, 19 May 2018 23:16:05 +0000.
  */
 
 namespace App\Models;
@@ -27,12 +27,6 @@ use Reliese\Database\Eloquent\Model as Eloquent;
 class SubCategorium extends Eloquent
 {
 	protected $primaryKey = 'sca_id';
-        
-                const estado_activo = 0;
-        const estado_inactivo = 1;
-        
-        const eliminado_false = 0;
-        const eliminado_true = 1;
 
 	protected $casts = [
 		'sca_estado' => 'int',

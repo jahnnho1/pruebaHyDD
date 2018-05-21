@@ -18,4 +18,16 @@ class ExampleTest extends TestCase
 
         $response->assertStatus(200);
     }
+
+    public function testCanSearchForProductos()
+    {
+
+        $response = $this->get('/producto/{1}');
+        $response->assertSee('Chanca');
+    }
+
+
+
+
+
 }

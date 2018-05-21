@@ -54,6 +54,15 @@
                   <a href="{{url('/Empresa')}}" class="nav-link">Empresa                
               </a>
                 </li>
+
+
+               @if(Auth::user())
+          
+
+                @endif
+
+
+
                 
             
                 @guest
@@ -79,9 +88,20 @@
                     <li> <a href="{{ route('logout') }}">
                              Cotizaciones   </a>
                     </li>
+
+               @if(Auth::user())
+                  @if(Auth::user()->TypeUser())
+                   <li> <a href="{{url('/Administracion/areaAdministrativa')}}">
+                             Panel administrativo   </a>
+                    </li>
+                  @endif
+               @endif
+
+
+
                     
                     <li> <a href="{{ route('logout') }}" onclick="event.preventDefault();
-                                             document.getElementById('logout-form').submit();">
+                        document.getElementById('logout-form').submit();">
                              Desconectarse   </a>
                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                 @csrf

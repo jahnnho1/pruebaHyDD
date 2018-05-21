@@ -153,3 +153,12 @@ Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 Route::get('/auth/facebook', 'SocialAuthController@facebook');
 Route::get('/auth/facebook/callback', 'SocialAuthController@callback');
 Route::post('/auth/facebook/register', 'SocialAuthController@register');
+
+
+/////Cuenta
+
+
+
+Route::get('/MiCuenta', 'cuentaController@cuenta')->middleware('auth');
+Route::post('/auth/credentials', 'cuentaController@postCredentials')->middleware('auth');
+

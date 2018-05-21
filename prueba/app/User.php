@@ -62,6 +62,8 @@ class User extends Authenticatable
                 return \Storage::disk('public')->url($rec_url);
 
             }
+
+            return 'assets/img-temp/400x450/img5.jpg';
             //dd($recurso);
 
     }

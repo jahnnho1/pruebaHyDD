@@ -19,7 +19,7 @@
           <div class="col-md-6 col-lg-5 flex-md-unordered align-self-center g-mb-80">
             <div class="g-bg-white rounded g-pa-50">
               <header class="text-center mb-4">
-                <h2 class="h2 g-color-black g-font-weight-600">Ingresar</h2>
+                <h2 class="h2 g-color-black g-font-weight-600">Iniciar sesión</h2>
                     <br> 
               </header>
 

@@ -77,11 +77,11 @@
 
 
                 <li class="nav-item hs-has-sub-menu g-mx-2--md g-mx-5--xl g-mb-5 g-mb-0--lg">
-                  <a href="{{url('/Categorias')}}" class="nav-link" id="nav-link-1" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1"> 
+                  <a href="{{url('/MiCuenta')}}" class="nav-link" id="nav-link-1" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1"> 
                     {{ Auth::user()->name }} </a>
                   <ul class="hs-sub-menu list-unstyled g-mt-17--lg g-mt-7--lg--scrolling" id="nav-submenu-1" aria-labelledby="nav-link-1">
 
-                    <li> <a href="{{ route('logout') }}">
+                    <li> <a href="{{url('/MiCuenta')}}">
                              Mi Cuenta   </a>
                     </li>
 

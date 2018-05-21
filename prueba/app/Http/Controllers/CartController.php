@@ -29,8 +29,15 @@ class CartController extends Controller
     public function add($proId){
 
         $producto = Producto::where('producto.pro_estado','=',producto::estado_activo)
-                ->where('producto.pro_estado','=',producto::estado_activo)
+                ->where('producto.pro_eliminado','=',producto::eliminado_false)
                 ->find($proId);
+
+        if($producto == null){
+                $data['errorMessage'] = 'El producto que quiere registrar no esta disponible.';
+                return redirect()->action('CartController@show', $data); 
+        }
+
+
 
     	$cart =  \Session::get('cart');
     	$cart[$producto->pro_id] = $producto;
